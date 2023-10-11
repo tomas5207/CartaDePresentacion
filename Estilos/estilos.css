@@ -1,0 +1,80 @@
+
+h1{
+    color: #ffff;
+}
+h2{
+    color: #ffff;
+}
+h3{
+    color: #ffff;
+}
+p{
+    color: #ffff;
+}
+button{
+    border-radius: 50px;
+    background-color: black;
+    color: #ffff;
+    padding: 10px;
+    border:1px solid;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+button:hover{
+    border-radius: 50px;
+    background-color: crimson;
+    color: #ffff;
+    padding: 10px;
+    border:1px solid;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.principal{
+    width: 100%;
+    height: 1000px;
+    background: rgb(0,0,0);
+}
+
+.presentacion{
+    width: 100%;
+    height: 1000px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 80%, rgba(171,41,12,1) 100%);
+}
+
+.PreFacultad{
+    width: 100%;
+    height: 1000px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 60%, rgba(171,41,12,1) 100%);
+}
+
+.facultad{
+    width: 100%;
+    height: 1800px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 40%, rgba(171,41,12,1) 100%);
+}
+
+.PostFacultad{
+    width: 100%;
+    height: 1000px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 40%, rgba(171,41,12,1) 100%);
+}
+
+.metas{
+    width: 100%;
+    height: 1000px;
+    background: rgb(0,0,0);
+}
+
+.agradecimientos{
+    width: 100%;
+    height: 1000px;
+    background: rgb(0,0,0);
+}
+
+
