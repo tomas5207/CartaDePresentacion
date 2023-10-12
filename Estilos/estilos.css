@@ -1,3 +1,13 @@
+@font-face{
+    font-family: "Cormorant Garamond";
+    src: url("../Fuentes/Cormorant-Garamond/CormorantGaramond-MediumItalic.ttf")
+}
+
+@font-face {
+    font-family: "Bebas Neue";
+    src: url("../Fuentes/Bebas_Neue/BebasNeue-Regular.ttf");
+}
+
 html body {
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -5,19 +15,23 @@ html body {
 h1{
     color: #ffff;
     padding-left: 10px;
+    font-family: "Bebas Neue";
 }
 h2{
     color: #ffff;
     padding-left: 10px;
+    font-family: "Bebas Neue";
 }
 h3{
     color: #ffff;
     padding-left: 10px;
+    font-family: "Bebas Neue";
 }
 p{
     color: #ffff;
     font-size: 20px;
     padding-left: 20px;
+    font-family: "Cormorant Garamond";
 }
 button{
     border-radius: 50px;
@@ -81,6 +95,7 @@ button:hover{
     position: relative;
     top: 100px;
     font-size: 30px;
+    font-family: "Bebas Neue";
 }
 
 .principal{
@@ -188,7 +203,8 @@ button:hover{
 
 .listaMetas{
     font-size: 20px;
-    color: #766580
+    color: #766580;
+    font-family: "Bebas Neue";
 }
 
 .metas{
@@ -202,7 +218,8 @@ button:hover{
 }
 
 .Saludos{
-    font-size: 25px;;
+    font-size: 25px;
+    font-family: "Cormorant Garamond";
 }
 
 .agradecimientos{
