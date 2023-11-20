@@ -1,17 +1,62 @@
-@font-face{
-    font-family: "Cormorant Garamond";
-    src: url("../Fuentes/Cormorant-Garamond/CormorantGaramond-MediumItalic.ttf")
+header{
+    background-color: #2D51FF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%232D51FF' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%233d4aef' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%234643df' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%234c3dd0' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%234f36c1' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%235130b3' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23512ba4' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23502596' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%234d2089' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%234a1b7c' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%2347176f' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23421363' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%233e0f57' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23380c4c' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23320941' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%232c0737' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%2326052d' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    width:100%;
+    clear: both;
+    content: '';
+    display: table;
 }
 
-@font-face {
-    font-family: "Bebas Neue";
-    src: url("../Fuentes/Bebas_Neue/BebasNeue-Regular.ttf");
+nav{
+    float: right
 }
+
+.main > li{
+    float: left;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+nav li a{
+    color:white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 15px;
+    display: block;
+    font-size: 25px;
+}
+
+nav li a:hover{
+    background-color: #fffcfc;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 15px;
+    display: block;
+    font-size: 25px;
+}
+
+nav li:hover > ul{
+    display: block;
+    clear: left;
+}
+
+nav li ul {
+    display: none;
+    position: relative;
+    min-width: 140px;
+}
+
+
 
 html body {
     max-width: 100% !important;
     overflow-x: hidden !important;
 }
+
 h1{
     color: #ffff;
     padding-left: 10px;
@@ -33,29 +78,20 @@ p{
     padding-left: 20px;
     font-family: "Cormorant Garamond";
 }
-button{
-    border-radius: 50px;
-    background-color: black;
-    color: #ffff;
-    padding: 10px;
-    border:1px solid;
-    text-decoration: none;
-}
 
-button:hover{
-    border-radius: 50px;
-    background-color: crimson;
-    color: #ffff;
-    padding: 10px;
-    border:1px solid;
-    text-transform: uppercase;
-    text-decoration: none;
-}
+
+
 
 #cv{
-    width:400px;
-    height:400px;
+    width:300px;
+    height:300px;
     float: left;
+}
+
+#menu{
+    width: 900px;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .btnPrincipal{
@@ -65,6 +101,7 @@ button:hover{
     padding: 0.5rem 1rem;
     width: 300px;
     margin: 0 auto;
+    left: 150px;
 }
 
 .tituloPrincipal{
@@ -74,7 +111,7 @@ button:hover{
 
 .parrafoPrincipal{
     position: relative;
-    left: 30px;
+    left: 8px;
 }
 
 .subP{
@@ -90,13 +127,6 @@ button:hover{
     top: 80px; 
 }
 
-.f{
-    text-align: center;
-    position: relative;
-    top: 100px;
-    font-size: 30px;
-    font-family: "Bebas Neue";
-}
 
 .principal{
     width: 100%;
@@ -107,15 +137,6 @@ button:hover{
 
 .tituloPresentacion{
     text-decoration: underline;
-}
-
-.btnPresentacion{
-    position: relative;
-    top: 50px;
-    display: block;
-    padding: 0.5rem 1rem;
-    width: 300px;
-    margin: 0 auto;
 }
 
 .presentacion{
@@ -132,20 +153,6 @@ button:hover{
 
 .tituloSecundaria{
     text-decoration: underline;
-}
-
-.V{
-    position:relative;
-    top: 60px;
-    left: 20px;
-    width:120px;
-}
-
-.S{
-    position:relative;
-    top: 60px;
-    left: 1250px;
-    width: 120px;
 }
 
 .PreFacultad{
