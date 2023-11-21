@@ -79,13 +79,99 @@ p{
     font-family: "Cormorant Garamond";
 }
 
+span{
+    font-size: 20px;
+}
+
 
 
 
 #cv{
-    width:300px;
-    height:300px;
-    float: left;
+    width:250px;
+    height:250px;
+    border-radius: 50%;
+    border: 10px solid #050a1c;
+}
+
+#m1{
+    border-radius: 10%;
+    border: 10px solid #4b1e5c;
+}
+
+#m2{
+    border-radius: 10%;
+    border: 10px solid #4b1e5c;
+}
+
+#m3{
+    border-radius: 10%;
+    border: 10px solid #4b1e5c;
+}
+
+#bg1{
+    border-radius: 50%;
+    border: 5px solid #050a1c;
+    background-color: #4b1e5c;
+}
+
+#ig1{
+    width:80px;
+    height:80px;
+}
+
+#bg2{
+    border-radius: 50%;
+    border: 5px solid #050a1c;
+    background-color: #4b1e5c;
+}
+
+#ig2{
+    width:80px;
+    height:80px;
+}
+
+#bg3{
+    border-radius: 50%;
+    border: 5px solid #050a1c;
+    background-color: #4b1e5c;
+}
+
+#ig3{
+    width:80px;
+    height:80px;
+}
+
+#bg4{
+    border-radius: 50%;
+    border: 5px solid #050a1c;
+    background-color: #4b1e5c;
+}
+
+#ig4{
+    width:80px;
+    height:80px;
+}
+
+#bg5{
+    border-radius: 50%;
+    border: 5px solid #050a1c;
+    background-color: #4b1e5c;
+}
+
+#ig5{
+    width:80px;
+    height:80px;
+}
+
+#bg6{
+    border-radius: 50%;
+    border: 5px solid #050a1c;
+    background-color: #4b1e5c;
+}
+
+#ig6{
+    width:80px;
+    height:80px;
 }
 
 #menu{
@@ -94,24 +180,10 @@ p{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.btnPrincipal{
-    position:relative;
-    top: 180px;
-    display: block;
-    padding: 0.5rem 1rem;
-    width: 300px;
-    margin: 0 auto;
-    left: 150px;
-}
-
 .tituloPrincipal{
     text-decoration: underline;
-    text-align: center;
-}
-
-.parrafoPrincipal{
     position: relative;
-    left: 8px;
+    bottom: 100px;
 }
 
 .subP{
@@ -129,9 +201,22 @@ p{
 
 
 .principal{
-    width: 100%;
-    height: 1000px;
-    background: rgb(0,0,0);
+    background: url("../Imagenes/fondo4.jpg");
+    background-size: cover;
+    height: 150vh;
+    color: #fff;
+    display:flex;
+    align-items: center;
+}
+
+.principal-banner{
+    background-color: #081333;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%234A94AA' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%234A94AA'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    border-radius: 10%;
+    width:500px;
+    height: 800px;
+    margin: auto;
+    text-align: center;
 }
 
 
@@ -140,10 +225,23 @@ p{
 }
 
 .presentacion{
-    width: 100%;
-    height: 1000px;
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 80%, rgba(171,41,12,1) 100%);
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+    url("../Imagenes/fondo.jpg");
+    background-size: cover;
+    height: 150vh;
+    color: #fff;
+    display:flex;
+    align-items: center;
+}
+
+.presentacion-banner{
+    background: rgb(53,78,202);
+    background: linear-gradient(357deg, rgba(53,78,202,1) 0%, rgba(9,8,20,1) 100%);
+    border-radius: 10%;
+    width:500px;
+    height: 800px;
+    margin: auto;
+    text-align: center;
 }
 
 
@@ -153,13 +251,6 @@ p{
 
 .tituloSecundaria{
     text-decoration: underline;
-}
-
-.PreFacultad{
-    width: 100%;
-    height: 1600px;
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 60%, rgb(174, 50, 23) 100%);
 }
 
 .tituloPrimer{
@@ -178,13 +269,6 @@ p{
     text-decoration: underline;
 }
 
-.facultad{
-    width: 100%;
-    height: 3330px;
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 40%, rgba(174,50, 23) 100%);
-}
-
 .tituloObtencion{
     text-decoration: underline;
 }
@@ -197,42 +281,91 @@ p{
     text-decoration: underline;
 }
 
-.PostFacultad{
-    width: 100%;
-    height: 1400px;
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 40%, rgba(174,50,23) 100%);
-}
-
 .misMetas{
     text-decoration: underline;
+    position: relative;
+    bottom: 90px;
+    background: linear-gradient(357deg, rgba(53,78,202,1) 0%, rgba(89,34,96,1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .listaMetas{
     font-size: 20px;
-    color: #766580;
+    color:#fff;
     font-family: "Bebas Neue";
 }
 
 .metas{
-    width: 100%;
-    height: 750px;
-    background: rgb(0,0,0);
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+    url("../Imagenes/fondo.jpg");
+    background-size: cover;
+    height: 150vh;
+    display:flex;
+    align-items: center;
 }
 
-.Gracias{
+.metas-banner{
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)),
+    url("../Imagenes/fondo2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10%;
+    width:800px;
+    height: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.gustos{
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+    url("../Imagenes/fondo.jpg");
+    background-size: cover;
+    height: 150vh;
+    display:flex;
+    align-items: center;
+}
+
+.gustos-banner{
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)),
+    url("../Imagenes/fondo2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10%;
+    color:#fff;
+    width:1200px;
+    height: 1100px;
+    margin: auto;
+    padding-left: 20px;
+}
+
+.misGustos{
     text-decoration: underline;
+    background: linear-gradient(357deg, rgba(53,78,202,1) 0%, rgba(89,34,96,1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
 }
 
-.Saludos{
-    font-size: 25px;
-    font-family: "Cormorant Garamond";
+
+
+.skills{
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+    url("../Imagenes/fondo3.jpg");
+    background-size: cover;
+    height: 150vh;
+    display:flex;
+    align-items: center;
 }
 
-.agradecimientos{
-    width: 100%;
-    height: 750px;
-    background: rgb(0,0,0);
+
+.estudios{
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+    url("../Imagenes/fondo3.jpg");
+    background-size: cover;
+    height: 150vh;
+    display:flex;
+    align-items: center;
 }
 
 
