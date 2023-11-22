@@ -96,22 +96,68 @@ span{
 #m1{
     border-radius: 10%;
     border: 10px solid #4b1e5c;
+    transition: 0.5s;
+    object-fit: cover;
+}
+
+#m1:hover{
+    transform: scale(1.2);
 }
 
 #m2{
     border-radius: 10%;
     border: 10px solid #4b1e5c;
+    transition: 0.5s;
+    object-fit: cover;
+}
+
+#m2:hover{
+    transform: scale(1.2);
 }
 
 #m3{
     border-radius: 10%;
     border: 10px solid #4b1e5c;
+    transition: 0.5s;
+    object-fit: cover;
 }
 
-#bg1{
+#m3:hover{
+    transform: scale(1.2);
+}
+
+.bg{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     border: 5px solid #050a1c;
+    background-color: transparent;
+    position:relative;
+    overflow: hidden;
+}
+
+.bg img{
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+}
+
+.bg.uno::after{
+    content: "";
+    width:100%;
+    height:100%;
+    border-radius: 50%;
     background-color: #4b1e5c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.bg.uno:hover::after{
+    bottom: 0;
 }
 
 #ig1{
@@ -119,10 +165,21 @@ span{
     height:80px;
 }
 
-#bg2{
+.bg.dos::after{
+    content: "";
+    width:100%;
+    height:100%;
     border-radius: 50%;
-    border: 5px solid #050a1c;
     background-color: #4b1e5c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.bg.dos:hover::after{
+    bottom: 0;
 }
 
 #ig2{
@@ -130,10 +187,21 @@ span{
     height:80px;
 }
 
-#bg3{
+.bg.tres::after{
+    content: "";
+    width:100%;
+    height:100%;
     border-radius: 50%;
-    border: 5px solid #050a1c;
     background-color: #4b1e5c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.bg.tres:hover::after{
+    bottom: 0;
 }
 
 #ig3{
@@ -141,10 +209,21 @@ span{
     height:80px;
 }
 
-#bg4{
+.bg.cuatro::after{
+    content: "";
+    width:100%;
+    height:100%;
     border-radius: 50%;
-    border: 5px solid #050a1c;
     background-color: #4b1e5c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.bg.cuatro:hover::after{
+    bottom: 0;
 }
 
 #ig4{
@@ -152,10 +231,21 @@ span{
     height:80px;
 }
 
-#bg5{
+.bg.cinco::after{
+    content: "";
+    width:100%;
+    height:100%;
     border-radius: 50%;
-    border: 5px solid #050a1c;
     background-color: #4b1e5c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.bg.cinco:hover::after{
+    bottom: 0;
 }
 
 #ig5{
@@ -163,10 +253,21 @@ span{
     height:80px;
 }
 
-#bg6{
+.bg.seis::after{
+    content: "";
+    width:100%;
+    height:100%;
     border-radius: 50%;
-    border: 5px solid #050a1c;
     background-color: #4b1e5c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.bg.seis:hover::after{
+    bottom: 0;
 }
 
 #ig6{
@@ -221,7 +322,9 @@ span{
 
 
 .tituloPresentacion{
-    text-decoration: underline;
+    background: linear-gradient(357deg, rgb(2, 3, 5) 0%, rgba(89,34,96,1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .presentacion{
@@ -234,57 +337,61 @@ span{
     align-items: center;
 }
 
-.presentacion-banner{
+.cartas-presentación{
+    display: flex;
+    grid-gap: 15px;
+}
+
+.carta{
+    position: relative;
+    width: 500px;
+    height: 800px;
+    align-items: flex-start;
+}
+
+.carta div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: 0.6s;
+}
+
+
+
+.carta .presentacion-cartaBanner{
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)),
+    url("../Imagenes/fondo2.jpg");
+    border-radius: 10%;
+    margin: auto;
+    transform: perspective(500px) rotateY(0deg);
+
+}
+
+.carta:hover .presentacion-cartaBanner{
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.carta .presentacion-banner{
     background: rgb(53,78,202);
     background: linear-gradient(357deg, rgba(53,78,202,1) 0%, rgba(9,8,20,1) 100%);
     border-radius: 10%;
-    width:500px;
-    height: 800px;
     margin: auto;
-    text-align: center;
+    transform: perspective(500px) rotateY(180deg);
 }
 
-
-.tituloPrimaria{
-    text-decoration: underline;
+.carta:hover .presentacion-banner{
+    transform: perspective(500px) rotateY(360deg);
 }
 
-.tituloSecundaria{
-    text-decoration: underline;
-}
-
-.tituloPrimer{
-    text-decoration: underline;
-}
-
-.tituloSegundo{
-    text-decoration: underline;
-}
-
-.tituloTercer{
-    text-decoration: underline;
-}
-
-.tituloTesis{
-    text-decoration: underline;
-}
-
-.tituloObtencion{
-    text-decoration: underline;
-}
-
-.tituloCoder{
-    text-decoration: underline;
-}
-
-.tituloActualidad{
-    text-decoration: underline;
-}
 
 .misMetas{
     text-decoration: underline;
     position: relative;
-    bottom: 90px;
+    bottom: 20px;
     background: linear-gradient(357deg, rgba(53,78,202,1) 0%, rgba(89,34,96,1) 100%);
     -webkit-background-clip: text;
     color: transparent;
@@ -312,7 +419,7 @@ span{
     background-size: cover;
     border-radius: 10%;
     width:800px;
-    height: 850px;
+    height: 1000px;
     margin: auto;
     text-align: center;
 }
@@ -358,6 +465,18 @@ span{
     align-items: center;
 }
 
+.skills-banner{
+    background: url("../Imagenes/fondo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10%;
+    color:#fff;
+    width:1000px;
+    height: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
 
 .estudios{
     background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
@@ -366,6 +485,18 @@ span{
     height: 150vh;
     display:flex;
     align-items: center;
+}
+
+.estudios-banner{
+    background: url("../Imagenes/fondo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10%;
+    color:#fff;
+    width:800px;
+    height: 800px;
+    margin: auto;
+    text-align: center;
 }
 
 
