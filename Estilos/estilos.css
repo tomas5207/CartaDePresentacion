@@ -81,6 +81,11 @@ p{
 
 span{
     font-size: 20px;
+    text-shadow: 2px 2px 4px #0000008c;
+}
+
+h4{
+    text-shadow: 2px 2px 4px #0000008c;
 }
 
 
@@ -91,7 +96,9 @@ span{
     height:250px;
     border-radius: 50%;
     border: 10px solid #050a1c;
+    box-shadow: 16px 14px 20px #0000008c;
 }
+
 
 #m1{
     border-radius: 10%;
@@ -127,11 +134,14 @@ span{
 }
 
 .bg{
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     border: 5px solid #050a1c;
+    box-shadow: 16px 14px 20px #0000008c;
     background-color: transparent;
     position:relative;
     overflow: hidden;
@@ -143,11 +153,22 @@ span{
     transition: .3s ease all;
 }
 
+
+@keyframes rotar{
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+
 .bg.uno::after{
     content: "";
     width:100%;
     height:100%;
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: #4b1e5c;
     position: absolute;
     z-index: 1;
@@ -169,7 +190,7 @@ span{
     content: "";
     width:100%;
     height:100%;
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: #4b1e5c;
     position: absolute;
     z-index: 1;
@@ -191,7 +212,7 @@ span{
     content: "";
     width:100%;
     height:100%;
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: #4b1e5c;
     position: absolute;
     z-index: 1;
@@ -213,7 +234,7 @@ span{
     content: "";
     width:100%;
     height:100%;
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: #4b1e5c;
     position: absolute;
     z-index: 1;
@@ -235,7 +256,7 @@ span{
     content: "";
     width:100%;
     height:100%;
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: #4b1e5c;
     position: absolute;
     z-index: 1;
@@ -257,7 +278,7 @@ span{
     content: "";
     width:100%;
     height:100%;
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: #4b1e5c;
     position: absolute;
     z-index: 1;
@@ -400,6 +421,7 @@ span{
 .listaMetas{
     font-size: 20px;
     color:#fff;
+    text-shadow: 2px 4px 4px #0000008c;
     font-family: "Bebas Neue";
 }
 
@@ -465,18 +487,355 @@ span{
     align-items: center;
 }
 
+.skill-content{
+    display: flex;
+    grid-gap: 100px;
+}
+
 .skills-banner{
     background: url("../Imagenes/fondo1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10%;
     color:#fff;
-    width:1000px;
-    height: 1000px;
+    width:700px;
+    height: 900px;
+    margin: auto;
+    padding: 10px;
+}
+
+.miSkills{
     margin: auto;
     text-align: center;
 }
 
+.contenedor{
+    width: 100%;
+    background-color: #fff;
+}
+
+.skill{
+    text-align: right;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.skill.genexus{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: fillgenexus 2s forwards , load 1s infinite linear;
+}
+
+
+.skill.java{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: filljava 2s forwards, load 1s infinite linear;
+}
+
+.skill.c{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: fillc 2s forwards, load 1s infinite linear;
+}
+
+.skill.html{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: fillhtml 2s forwards, load 1s infinite linear;
+}
+
+.skill.css{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: fillcss 2s forwards, load 1s infinite linear;
+}
+
+.skill.javascript{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: filljavascript 2s forwards, load 1s infinite linear;
+}
+
+.skill.sqlserver{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: fillsqlserver 2s forwards, load 1s infinite linear;
+}
+
+.skill.mysql{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: fillmysql 2s forwards, load 1s infinite linear;
+}
+
+@keyframes fillmysql {
+    0%{width: 0;}
+    100%{width: 40%}
+}
+
+
+@keyframes fillsqlserver {
+    0%{width: 0;}
+    100%{width: 70%}
+}
+
+
+@keyframes filljavascript {
+    0%{width: 0;}
+    100%{width: 40%}
+}
+
+
+@keyframes fillcss {
+    0%{width: 0;}
+    100%{width: 45%}
+}
+
+
+@keyframes fillhtml {
+    0%{width: 0;}
+    100%{width: 60%}
+}
+
+@keyframes fillc {
+    0%{width: 0;}
+    100%{width: 45%}
+}
+
+@keyframes filljava {
+    0%{width: 0;}
+    100%{width: 35%}
+}
+
+@keyframes fillgenexus {
+    0%{ width: 0;}
+    100%{width: 50%;}
+}
+
+@keyframes load{
+    0%{background-position: 0 0;}
+    100%{background-position: 50px 50px;}
+}
+
+
+.skills-banner2{
+    background: url("../Imagenes/fondo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10%;
+    color:#fff;
+    width:700px;
+    height: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.sf{
+    border-radius: 50%;
+    border: 5px solid #0f1633;
+    box-shadow: 16px 14px 20px #0000008c;
+    position:relative;
+    overflow: hidden;
+}
+
+.sf img{
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+}
+
+.sf.uno::after{
+    content: "";
+    width:100%;
+    height:100%;
+    border-radius: 10%;
+    background-color: #32db7c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.sf.uno:hover::after{
+    bottom: 0;
+}
+
+#isf1{
+    width: 80px;
+    height: 80px;
+}
+
+.sf.dos::after{
+    content: "";
+    width:100%;
+    height:100%;
+    border-radius: 10%;
+    background-color: #32db7c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.sf.dos:hover::after{
+    bottom: 0;
+}
+
+#isf2{
+    width: 80px;
+    height: 80px;
+}
+
+.sf.tres::after{
+    content: "";
+    width:100%;
+    height:100%;
+    border-radius: 10%;
+    background-color: #32db7c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.sf.tres:hover::after{
+    bottom: 0;
+}
+
+#isf3{
+    width: 80px;
+    height: 80px;
+}
+
+.sf.cuatro::after{
+    content: "";
+    width:100%;
+    height:100%;
+    border-radius: 10%;
+    background-color: #32db7c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.sf.cuatro:hover::after{
+    bottom: 0;
+}
+
+#isf4{
+    width: 80px;
+    height: 80px;
+}
+
+.sf.cinco::after{
+    content: "";
+    width:100%;
+    height:100%;
+    border-radius: 10%;
+    background-color: #32db7c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.sf.cinco:hover::after{
+    bottom: 0;
+}
+
+#isf5{
+    width: 80px;
+    height: 80px;
+}
 
 .estudios{
     background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
