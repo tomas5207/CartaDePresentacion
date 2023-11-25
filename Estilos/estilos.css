@@ -153,15 +153,14 @@ h4{
     transition: .3s ease all;
 }
 
-
-@keyframes rotar{
-    from{
-        transform: rotate(0deg)
-    }
-    to{
-        transform: rotate(-360deg);
-    }
+.bc{
+    height: 350px;
+    width: 300px;
+    border-radius: 10%;
+    box-shadow: 16px 14px 20px #0000008c;
+    position: relative;
 }
+
 
 
 .bg.uno::after{
@@ -348,6 +347,12 @@ h4{
     color: transparent;
 }
 
+.tituloEstudio{
+    background: linear-gradient(357deg, rgb(187, 193, 203) 0%, rgb(70, 96, 34) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
 .presentacion{
     background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
     url("../Imagenes/fondo.jpg");
@@ -358,15 +363,36 @@ h4{
     align-items: center;
 }
 
+.estudios{
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+    url("../Imagenes/fondo3.jpg");
+    background-size: cover;
+    height: 150vh;
+    display:flex;
+    align-items: center;
+}
+
 .cartas-presentación{
     display: flex;
     grid-gap: 15px;
+}
+
+.cartas-estudios{
+    display: flex;
+    grid-gap: 25px;
 }
 
 .carta{
     position: relative;
     width: 500px;
     height: 800px;
+    align-items: flex-start;
+}
+
+.carta2{
+    position: relative;
+    width: 350px;
+    height: 500px;
     align-items: flex-start;
 }
 
@@ -381,6 +407,48 @@ h4{
     transition: 0.6s;
 }
 
+.carta2 div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: 0.6s;
+}
+
+
+
+.carta2 .estudios-cartaBanner{
+    background: url("../Imagenes/fondo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+    width:350px;
+    height: 500px;
+    margin: auto;
+    transform: perspective(500px) rotateY(0deg);
+}
+
+.carta2:hover .estudios-cartaBanner{
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.carta2 .estudios-banner{
+    background: rgb(194,200,192);
+    background: linear-gradient(357deg, rgba(194,200,192,1) 0%, rgba(91,202,53,1) 100%);
+    border-radius: 10%;
+    text-align: center;
+    padding-top: 180px;
+    margin: auto;
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.carta2:hover .estudios-banner{
+    transform: perspective(500px) rotateY(360deg);
+}
 
 
 .carta .presentacion-cartaBanner{
@@ -462,10 +530,22 @@ h4{
     background-size: cover;
     border-radius: 10%;
     color:#fff;
-    width:1200px;
-    height: 1100px;
+    width:1400px;
+    height: 750px;
     margin: auto;
-    padding-left: 20px;
+    padding-left: 15px;
+}
+
+.gusto{
+    text-decoration: underline;
+}
+
+.listaGustos{
+    padding-top: 120px;
+    display: flex;
+    grid-gap: 25px;
+    align-items: center;
+    justify-content: center;
 }
 
 .misGustos{
@@ -653,7 +733,7 @@ h4{
 
 @keyframes fillmysql {
     0%{width: 0;}
-    100%{width: 40%}
+    100%{width: 45%}
 }
 
 
@@ -671,7 +751,7 @@ h4{
 
 @keyframes fillcss {
     0%{width: 0;}
-    100%{width: 45%}
+    100%{width: 50%}
 }
 
 
@@ -682,7 +762,7 @@ h4{
 
 @keyframes fillc {
     0%{width: 0;}
-    100%{width: 45%}
+    100%{width: 40%}
 }
 
 @keyframes filljava {
@@ -837,25 +917,126 @@ h4{
     height: 80px;
 }
 
-.estudios{
-    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
-    url("../Imagenes/fondo3.jpg");
-    background-size: cover;
-    height: 150vh;
-    display:flex;
-    align-items: center;
+
+.contacto{
+background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+url("../Imagenes/fondo5.jpg");
+background-size: cover;
+height: 150vh;
+width: 100%;
+display:grid;
+align-items: center;
+justify-content: center;
 }
 
-.estudios-banner{
-    background: url("../Imagenes/fondo1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 10%;
-    color:#fff;
-    width:800px;
+.contacto-banner{
+    position: relative;
+    width: 800px;
     height: 800px;
-    margin: auto;
-    text-align: center;
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)),
+    #424543;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 2;
 }
+
+.contacto-banner h1{
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.contacto-banner h3{
+    position: relative;
+    color: #fff;
+    z-index: 1;
+    bottom: -150px;
+    font-weight: bold;
+}
+
+.contacto-banner a{
+    position: relative;
+    color: #fff;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.contacto-banner img{
+    width: 80px;
+    height: 80px;
+}
+
+.mail{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.descargar{
+    position: relative;
+    left: 310px;
+    bottom: -250px;
+    font-size: 25px;
+    background-color: blue;
+    text-decoration: none;
+    display:inline-block;
+    padding: 15px 25px;
+    box-shadow: 16px 14px 20px #0000008c;
+    border:5px solid black;
+    border-radius: 20px;
+}
+
+
+.descargar:hover{
+    background-color: red;
+    border: 5px solid white;
+    transition: border 1s, background-color 1s;
+}
+
+.contacto-banner::before{
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 1200px;
+    left: 200px;
+    top: -150px;
+    background: linear-gradient(#2127a3, #05eafa);
+    animation: rotar 10s linear infinite;
+}
+
+.contacto-banner::after{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)),
+    #424543;
+    border-radius: 18px;
+}
+
+@keyframes rotar
+{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.proyectos{
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+    url("../Imagenes/fondo6.jpg");
+    background-size: cover;
+    height: 150vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
 
 
