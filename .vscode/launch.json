@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///D:/Users/Equipo/Desktop/MiCartaPresentaci%C3%B3n/principal.html",
+            "url": "D:/Users/Equipo/Desktop/MiCartaPresentación/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
