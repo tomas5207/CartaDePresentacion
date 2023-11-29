@@ -9,11 +9,15 @@ header{
     display: table;
 }
 
+.nav-item{
+    font-size: 25px;
+}
+
 nav{
     float: right
 }
 
-.main > li{
+#main > li{
     float: left;
 }
 
@@ -31,8 +35,7 @@ nav li a{
 }
 
 nav li a:hover{
-    background-color: #fffcfc;
-    color: black;
+    background-color: #020202;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px 15px;
     display: block;
@@ -313,8 +316,6 @@ h4{
 
 .tituloPrincipal{
     text-decoration: underline;
-    position: relative;
-    bottom: 100px;
 }
 
 .subP{
@@ -1170,6 +1171,19 @@ justify-content: center;
     position: relative;
     top: 115px;
     left: 220px;
+}
+
+@media only screen and (max-device-width: 960px){
+    
+    .principal{
+        background: url("../Imagenes/fondo4.jpg");
+        background-size: cover;
+        height: 100%;
+        width: auto;
+        color: #fff;
+        display:flex;
+        align-items: center;
+    }
 }
 
 
