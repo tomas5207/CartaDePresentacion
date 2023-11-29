@@ -1184,6 +1184,33 @@ justify-content: center;
         display:flex;
         align-items: center;
     }
+
+    .presentacion{
+        background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+        url("../Imagenes/fondo.jpg");
+        background-size: cover;
+        height: 100%;
+        width: auto;
+        color: #fff;
+    }
+
+    .carta{
+        position: relative;
+        width: 250px;
+        height: 350px;
+    }
+
+    .cartas-presentación{
+        display: grid;
+        grid-gap: 15px;
+        padding-left: 15%;
+    }
+
+    .carta p{
+        font-size: 12px;
+    }
+
+
 }
 
 
