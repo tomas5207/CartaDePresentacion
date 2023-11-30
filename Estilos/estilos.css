@@ -1308,6 +1308,100 @@ justify-content: center;
         font-size: 18px;
     }
 
+    .skills{
+        background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+        url("../Imagenes/fondo3.jpg");
+        background-size: cover;
+        height: 100%;
+        width: auto;
+        display:flex;
+        align-items: center;
+    }
+
+    .skill-content{
+        display: grid;
+        grid-gap: 100px;
+    }
+
+
+    .skills-banner{
+        background: url("../Imagenes/fondo1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10%;
+        color:#fff;
+        width:300px;
+        height: 900px;
+        margin: auto;
+        padding: 10px;
+        position: relative;
+        left: 10px;
+        top: 15px;
+    }
+
+    .skills-banner2{
+        background: url("../Imagenes/fondo1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10%;
+        color:#fff;
+        width:300px;
+        height: 900px;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        left: 10px;
+    }
+
+    .estudios{
+        background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+        url("../Imagenes/fondo3.jpg");
+        background-size: cover;
+        height: 100%;
+        width: auto;
+        color: #fff;
+    }
+
+    .carta2{
+        position: relative;
+        width: 250px;
+        height: 350px;
+    }
+
+    .carta2 .estudios-cartaBanner{
+        background: url("../Imagenes/fondo1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10%;
+        color:#fff;
+        width:250px;
+        height: 350px;
+        margin: auto;
+        transform: perspective(500px) rotateY(0deg);
+    }
+
+
+    .cartas-estudios{
+        display: grid;
+        grid-gap: 15px;
+        padding-left: 15%;
+    }
+
+    .carta2 p{
+        font-size: 12px;
+    }
+
+    .contacto{
+        background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+        url("../Imagenes/fondo5.jpg");
+        background-size: cover;
+        height: 100%;
+        width: auto;
+        display:grid;
+        align-items: center;
+        justify-content: center;
+        }
+
 }
 
 
