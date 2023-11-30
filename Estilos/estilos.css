@@ -1264,6 +1264,49 @@ justify-content: center;
         right: 45px;
     }
 
+    .metas{
+        background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+        url("../Imagenes/fondo.jpg");
+        background-size: cover;
+        height: 100%;
+        width: auto;
+        display:flex;
+        align-items: center;
+    }
+    
+    .metas-banner{
+        background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)),
+        url("../Imagenes/fondo2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10%;
+        width:300px;
+        height: 1000px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .metas-banner li{
+        position: relative;
+        right: 10px;
+        font-size: 15px;
+    }
+
+    .metas-banner img{
+        width: 180px;
+        height: 120px;
+    }
+
+    .misMetas{
+        text-decoration: underline;
+        position: relative;
+        bottom: 0px;
+        right: 10px;
+        background: linear-gradient(357deg, rgba(53,78,202,1) 0%, rgba(89,34,96,1) 100%);
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 18px;
+    }
 
 }
 
