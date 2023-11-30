@@ -1210,6 +1210,60 @@ justify-content: center;
         font-size: 12px;
     }
 
+    .gustos{
+        background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
+        url("../Imagenes/fondo.jpg");
+        background-size: cover;
+        height: 100%;
+        width: auto;
+    }
+
+    .gustos-banner{
+        background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)),
+        url("../Imagenes/fondo2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 5%;
+        color:#fff;
+        width:300px;
+        height: 1800px;
+        display: table;
+    }
+
+    .listaGustos{
+        padding-top: 120px;
+        display: table-cell;
+        grid-gap: 25px;
+    }
+
+    .bc{
+        width: 200px;
+        height: 300px;
+    }
+
+    .gustos-banner span{
+        font-size: 10px;
+    }
+
+    .misGustos{
+        position: relative;
+        bottom: 170px;
+        left: 85px;
+        font-size: 25px;
+        
+    }
+
+    .bc.v1{
+        position: relative;
+        left: -45px;
+    }
+    
+    .bc.v2{
+        position: relative;
+        top: 0;
+        right: 45px;
+    }
+
 
 }
 
