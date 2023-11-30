@@ -746,46 +746,46 @@ h4{
 
 @keyframes fillmysql {
     0%{width: 0;}
-    100%{width: 45%}
+    100%{width: 65%}
 }
 
 
 @keyframes fillsqlserver {
     0%{width: 0;}
-    100%{width: 70%}
+    100%{width: 90%}
 }
 
 
 @keyframes filljavascript {
     0%{width: 0;}
-    100%{width: 40%}
+    100%{width: 60%}
 }
 
 
 @keyframes fillcss {
     0%{width: 0;}
-    100%{width: 50%}
+    100%{width: 70%}
 }
 
 
 @keyframes fillhtml {
     0%{width: 0;}
-    100%{width: 60%}
+    100%{width: 80%}
 }
 
 @keyframes fillc {
     0%{width: 0;}
-    100%{width: 40%}
+    100%{width: 60%}
 }
 
 @keyframes filljava {
     0%{width: 0;}
-    100%{width: 35%}
+    100%{width: 55%}
 }
 
 @keyframes fillgenexus {
     0%{ width: 0;}
-    100%{width: 50%;}
+    100%{width: 70%;}
 }
 
 @keyframes load{
@@ -1152,6 +1152,13 @@ justify-content: center;
     left: 435px;
 }
 
+.spp2-1{
+    color: white;
+    position: relative;
+    top: -130px;
+    left: 390px;
+}
+
 .spp3{
     color: white;
     position: relative;
@@ -1474,7 +1481,7 @@ justify-content: center;
         width: 150px;
         height: 100px;
         border-radius: 10%;
-        border: 10px solid #E313FF;
+        border: 10px solid #bf15d5;
         position: relative;
         left: 70px;
         top: 20px;
@@ -1487,7 +1494,7 @@ justify-content: center;
         width: 150px;
         height: 100px;
         border-radius: 10%;
-        border: 10px solid #E313FF;
+        border: 10px solid #bf15d5;
         position: relative;
         left: 70px;
         top: 90px;
@@ -1498,7 +1505,7 @@ justify-content: center;
         width: 150px;
         height: 100px;
         border-radius: 10%;
-        border: 10px solid #E313FF;
+        border: 10px solid #bf15d5;
         position: relative;
         left: 70px;
         top: 100px;
@@ -1527,6 +1534,14 @@ justify-content: center;
         position: relative;
         top: 105px;
         left: 90px;
+        font-size: 16px;
+    }
+
+    .spp2-1{
+        color: white;
+        position: relative;
+        top: 105px;
+        left: 55px;
         font-size: 16px;
     }
     
