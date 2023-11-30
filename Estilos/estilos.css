@@ -1380,6 +1380,16 @@ justify-content: center;
         transform: perspective(500px) rotateY(0deg);
     }
 
+    .carta2 .estudios-banner{
+        background: rgb(194,200,192);
+        background: linear-gradient(357deg, rgba(194,200,192,1) 0%, rgba(91,202,53,1) 100%);
+        border-radius: 10%;
+        text-align: center;
+        padding-top: 140px;
+        margin: auto;
+        transform: perspective(500px) rotateY(180deg);
+    }
+
 
     .cartas-estudios{
         display: grid;
@@ -1401,6 +1411,37 @@ justify-content: center;
         align-items: center;
         justify-content: center;
         }
+
+    .contacto-banner{
+        position: relative;
+        width: 300px;
+        height: 800px;
+        background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)),
+        #424543;
+        border-radius: 20px;
+        overflow: hidden;
+        z-index: 2;
+        }
+    
+        .contacto-banner h3{
+        font-size: 15px;
+    }
+
+    .descargar{
+        position: relative;
+        left: 50px;
+        bottom: -250px;
+        font-size: 25px;
+        background-color: blue;
+        text-decoration: none;
+        display:inline-block;
+        padding: 15px 25px;
+        box-shadow: 16px 14px 20px #0000008c;
+        border:5px solid black;
+        border-radius: 20px;
+    }
+
+
 
 }
 
