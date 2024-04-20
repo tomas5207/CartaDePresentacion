@@ -375,12 +375,12 @@ h4{
 }
 
 .estudios{
-    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
-    url("../Imagenes/fondo3.jpg");
+    background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), url("../Imagenes/fondo3.jpg");
     background-size: cover;
-    height: 150vh;
+    height: auto; 
     display:flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .cartas-presentación{
@@ -390,7 +390,9 @@ h4{
 
 .cartas-estudios{
     display: flex;
-    grid-gap: 25px;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 25px; 
 }
 
 .carta{
@@ -575,7 +577,7 @@ h4{
     background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
     url("../Imagenes/fondo3.jpg");
     background-size: cover;
-    height: 150vh;
+    height: 160vh;
     display:flex;
     align-items: center;
 }
@@ -591,8 +593,9 @@ h4{
     background-size: cover;
     border-radius: 10%;
     color:#fff;
+    margin-bottom: 50px;
     width:700px;
-    height: 900px;
+    height: 1100px;
     margin: auto;
     padding: 10px;
 }
@@ -744,9 +747,57 @@ h4{
     animation: fillmysql 2s forwards, load 1s infinite linear;
 }
 
+.skill.git{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: fillgit 2s forwards, load 1s infinite linear;
+}
+
+.skill.postgresql{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: fillpostgresql 2s forwards, load 1s infinite linear;
+}
+
+.skill.react{
+    display: block;
+    background-image: linear-gradient(
+        -45deg,
+        #32db7c 25%,
+        #1f6e41 25%,
+        #1f6e41 50%,
+        #32db7c 50%,
+        #32db7c 75%,
+        #1f6e41 75%,
+        #1f6e41 
+    );
+    background-size: 50px 50px;
+    animation: fillreact 2s forwards, load 1s infinite linear;
+}
+
 @keyframes fillmysql {
     0%{width: 0;}
-    100%{width: 65%}
+    100%{width: 70%}
 }
 
 
@@ -758,7 +809,7 @@ h4{
 
 @keyframes filljavascript {
     0%{width: 0;}
-    100%{width: 70%}
+    100%{width: 80%}
 }
 
 
@@ -775,17 +826,32 @@ h4{
 
 @keyframes fillc {
     0%{width: 0;}
-    100%{width: 60%}
+    100%{width: 70%}
 }
 
 @keyframes filljava {
     0%{width: 0;}
-    100%{width: 55%}
+    100%{width: 60%}
 }
 
 @keyframes fillgenexus {
     0%{ width: 0;}
-    100%{width: 70%;}
+    100%{width: 75%;}
+}
+
+@keyframes fillgit {
+    0%{width: 0;}
+    100%{width: 95%}
+}
+
+@keyframes fillpostgresql {
+    0%{width: 0;}
+    100%{width: 80%}
+}
+
+@keyframes fillreact {
+    0%{width: 0;}
+    100%{width: 80%}
 }
 
 @keyframes load{
@@ -801,7 +867,7 @@ h4{
     border-radius: 10%;
     color:#fff;
     width:700px;
-    height: 900px;
+    height: 1100px;
     margin: auto;
     text-align: center;
 }
@@ -838,8 +904,8 @@ h4{
 }
 
 #isf1{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
 }
 
 .sf.dos::after{
@@ -860,8 +926,8 @@ h4{
 }
 
 #isf2{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
 }
 
 .sf.tres::after{
@@ -882,8 +948,8 @@ h4{
 }
 
 #isf3{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
 }
 
 .sf.cuatro::after{
@@ -904,8 +970,8 @@ h4{
 }
 
 #isf4{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
 }
 
 .sf.cinco::after{
@@ -926,8 +992,74 @@ h4{
 }
 
 #isf5{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
+}
+
+.sf.seis::after{
+    content: "";
+    width:100%;
+    height:100%;
+    border-radius: 10%;
+    background-color: #32db7c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.sf.seis:hover::after{
+    bottom: 0;
+}
+
+#isf6{
+    width: 75px;
+    height: 75px;
+}
+
+.sf.siete::after{
+    content: "";
+    width:100%;
+    height:100%;
+    border-radius: 10%;
+    background-color: #32db7c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.sf.siete:hover::after{
+    bottom: 0;
+}
+
+#isf7{
+    width: 75px;
+    height: 75px;
+}
+
+.sf.ocho::after{
+    content: "";
+    width:100%;
+    height:100%;
+    border-radius: 10%;
+    background-color: #32db7c;
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: 0;
+    transition: .3s ease-in-out all;
+}
+
+.sf.ocho:hover::after{
+    bottom: 0;
+}
+
+#isf8{
+    width: 75px;
+    height: 75px;
 }
 
 
@@ -1058,7 +1190,7 @@ justify-content: center;
     background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
     url("../Imagenes/fondo6.jpg");
     background-size: cover;
-    height: 150vh;
+    height: 180vh;
     width: 100%;
     display:flex;
     align-items: center;
@@ -1080,7 +1212,7 @@ justify-content: center;
     background-attachment: fixed;
     background-size: cover;
     width: 700px;
-    height: 500px;
+    height: 800px;
     border-radius: 20px;
     margin: auto;
 }
@@ -1122,8 +1254,8 @@ justify-content: center;
     border-radius: 10%;
     border: 10px solid #E313FF;
     position: relative;
-    top: 60px;
-    left: 230px;
+    top: -60px;
+    left: 60px;
     transition: 0.5s;
 }
 
@@ -1131,53 +1263,75 @@ justify-content: center;
     transform: scale(1.2);
 }
 
+.ip4{
+    width: 250px;
+    height: 180px;
+    border-radius: 10%;
+    border: 10px solid #E313FF;
+    position: relative;
+    top: -300px;
+    left: 380px;
+    transition: 0.5s;
+}
+
+.ip4:hover{
+    transform: scale(1.2);
+}
+
 .spp1{
     color: white;
     position: relative;
-    top: 100px;
-    left: 130px;
+    top: 80px;
+    left: 120px;
 }
 
 .spp1-1{
     color: white;
     position: relative;
-    top: 100px;
-    left: 60px;
+    top: 80px;
+    left: 40px;
 }
 
 .spp2{
     color: white;
     position: relative;
-    top: -130px;
+    top: -160px;
     left: 435px;
 }
 
 .spp2-1{
     color: white;
     position: relative;
-    top: -130px;
+    top: -160px;
     left: 390px;
 }
 
 .spp3{
     color: white;
     position: relative;
-    top: 105px;
-    left: 280px;
+    top: -40px;
+    left: 30px;
 }
 
 .spp3-1{
     color: white;
     position: relative;
-    top: 110px;
-    left: 245px;
+    top: -40px;
+    left: 70px;
 }
 
-.spp3-2{
+.spp4{
     color: white;
     position: relative;
-    top: 115px;
-    left: 220px;
+    top: -280px;
+    left: 380px;
+}
+
+.spp4-1{
+    color: white;
+    position: relative;
+    top: -280px;
+    left: 430px;
 }
 
 @media only screen and (max-device-width: 960px){
@@ -1214,7 +1368,7 @@ justify-content: center;
     }
 
     .carta p{
-        font-size: 12px;
+        font-size: 10.5px;
     }
 
     .gustos{
@@ -1338,7 +1492,7 @@ justify-content: center;
         border-radius: 10%;
         color:#fff;
         width:300px;
-        height: 900px;
+        height: 1100px;
         margin: auto;
         padding: 10px;
         position: relative;
@@ -1358,6 +1512,46 @@ justify-content: center;
         text-align: center;
         position: relative;
         left: 10px;
+    }
+
+    #isf1{
+        width: 50px;
+        height: 50px;
+    }
+
+    #isf2{
+        width: 50px;
+        height: 50px;
+    }
+
+    #isf3{
+        width: 50px;
+        height: 50px;
+    }
+
+    #isf4{
+        width: 50px;
+        height: 50px;
+    }
+
+    #isf5{
+        width: 50px;
+        height: 50px;
+    }
+
+    #isf6{
+        width: 50px;
+        height: 50px;
+    }
+
+    #isf7{
+        width: 50px;
+        height: 50px;
+    }
+
+    #isf8{
+        width: 50px;
+        height: 50px;
     }
 
     .estudios{
@@ -1464,6 +1658,11 @@ justify-content: center;
         grid-gap: 25px;
         padding-top: 20px;
     }
+
+    .proyectos h1{
+        position: relative;
+        left: -5px;
+    }
     
     .proyectos-banner{
         background-color: #E313FF;
@@ -1471,7 +1670,7 @@ justify-content: center;
         background-attachment: fixed;
         background-size: cover;
         width: 300px;
-        height: 500px;
+        height: 1000px;
         border-radius: 20px;
         margin: auto;
         padding-top: 20px;
@@ -1508,7 +1707,18 @@ justify-content: center;
         border: 10px solid #bf15d5;
         position: relative;
         left: 70px;
-        top: 100px;
+        top: 160px;
+        transition: 0.5s;
+    }
+
+    .ip4{
+        width: 150px;
+        height: 100px;
+        border-radius: 10%;
+        border: 10px solid #bf15d5;
+        position: relative;
+        left: 70px;
+        top: 230px;
         transition: 0.5s;
     }
     
@@ -1548,24 +1758,32 @@ justify-content: center;
     .spp3{
         color: white;
         position: relative;
-        top: 115px;
-        left: 80px;
+        top: 175px;
+        left: 20px;
         font-size: 16px;
     }
     
     .spp3-1{
         color: white;
         position: relative;
-        top: 115px;
+        top: 175px;
+        left: 55px;
+        font-size: 16px;
+    }
+    
+    .spp4{
+        color: white;
+        position: relative;
+        top: 245px;
         left: 50px;
         font-size: 16px;
     }
     
-    .spp3-2{
+    .spp4-1{
         color: white;
         position: relative;
-        top: 115px;
-        left: 30px;
+        top: 245px;
+        left: 90px;
         font-size: 16px;
     }
 
