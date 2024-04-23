@@ -397,7 +397,7 @@ h4{
 
 .carta{
     position: relative;
-    width: 500px;
+    width: 497px;
     height: 700px;
     align-items: flex-start;
 }
@@ -471,6 +471,10 @@ h4{
     margin: auto;
     transform: perspective(500px) rotateY(0deg);
 
+}
+
+.carta p{
+    font-size: 18px;
 }
 
 .carta:hover .presentacion-cartaBanner{
@@ -1239,7 +1243,7 @@ justify-content: center;
     border-radius: 10%;
     border: 10px solid #E313FF;
     position: relative;
-    top: -180px;
+    top: -205px;
     left: 380px;
     transition: 0.5s;
 }
@@ -1254,7 +1258,7 @@ justify-content: center;
     border-radius: 10%;
     border: 10px solid #E313FF;
     position: relative;
-    top: -60px;
+    top: -140px;
     left: 60px;
     transition: 0.5s;
 }
@@ -1269,7 +1273,7 @@ justify-content: center;
     border-radius: 10%;
     border: 10px solid #E313FF;
     position: relative;
-    top: -300px;
+    top: -430px;
     left: 380px;
     transition: 0.5s;
 }
@@ -1292,46 +1296,102 @@ justify-content: center;
     left: 40px;
 }
 
+.spp1-2{
+    color: white;
+    position: relative;
+    top: 80px;
+    left: 25px;
+    font-size: 11px;
+}
+
 .spp2{
     color: white;
     position: relative;
-    top: -160px;
+    top: -184px;
     left: 435px;
 }
 
 .spp2-1{
     color: white;
     position: relative;
-    top: -160px;
+    top: -184px;
     left: 390px;
+}
+
+.spp2-2{
+    color: white;
+    position: relative;
+    top: -184px;
+    left: 350px;
+    font-size: 11px;
 }
 
 .spp3{
     color: white;
     position: relative;
-    top: -40px;
+    top: -110px;
     left: 30px;
 }
 
 .spp3-1{
     color: white;
     position: relative;
-    top: -40px;
+    top: -110px;
     left: 70px;
+}
+
+.spp3-2{
+    color: white;
+    position: relative;
+    top: -110px;
+    left: 5px;
+    font-size: 11px;
+}
+
+.spp3-3{
+    color: white;
+    position: relative;
+    top: -115px;
+    left: 125px;
+    font-size: 11px;
 }
 
 .spp4{
     color: white;
     position: relative;
-    top: -280px;
+    top: -398px;
     left: 380px;
 }
 
 .spp4-1{
     color: white;
     position: relative;
-    top: -280px;
+    top: -398px;
     left: 430px;
+}
+
+.spp4-2{
+    color: white;
+    position: relative;
+    top: -399px;
+    left: 360px;
+    font-size: 11px;
+}
+
+.spp4-3{
+    color: white;
+    position: relative;
+    top: -404px;
+    left: 360px;
+    font-size: 11px;
+}
+
+.spp4-4{
+    color: white;
+    position: relative;
+    top: -409px;
+    left: 360px;
+    font-size: 11px;
 }
 
 @media only screen and (max-device-width: 960px){
@@ -1670,7 +1730,7 @@ justify-content: center;
         background-attachment: fixed;
         background-size: cover;
         width: 300px;
-        height: 1000px;
+        height: 1500px;
         border-radius: 20px;
         margin: auto;
         padding-top: 20px;
@@ -1738,6 +1798,14 @@ justify-content: center;
         left: 30px;
         font-size: 16px;
     }
+
+    .spp1-2{
+        color: white;
+        position: relative;
+        top: 35px;
+        left: 30px;
+        font-size: 13px;
+    }
     
     .spp2{
         color: white;
@@ -1754,6 +1822,16 @@ justify-content: center;
         left: 55px;
         font-size: 16px;
     }
+
+    .spp2-2{
+        color: white;
+        position: relative;
+        top: 105px;
+        left: 35px;
+        font-size: 13px;
+    }
+
+
     
     .spp3{
         color: white;
@@ -1770,6 +1848,23 @@ justify-content: center;
         left: 55px;
         font-size: 16px;
     }
+
+    .spp3-2{
+        color: white;
+        position: relative;
+        top: 175px;
+        left: 35px;
+        font-size: 13px;
+    }
+
+    .spp3-3{
+        color: white;
+        position: relative;
+        top: 175px;
+        left: 35px;
+        font-size: 13px;
+    }
+    
     
     .spp4{
         color: white;
@@ -1786,6 +1881,31 @@ justify-content: center;
         left: 90px;
         font-size: 16px;
     }
+
+    .spp4-2{
+        color: white;
+        position: relative;
+        top: 245px;
+        left: 5px;
+        font-size: 13px;
+    }
+    
+    .spp4-3{
+        color: white;
+        position: relative;
+        top: 245px;
+        left: 5px;
+        font-size: 13px;
+    }
+
+    .spp4-4{
+        color: white;
+        position: relative;
+        top: 245px;
+        left: 5px;
+        font-size: 13px;
+    }
+
 
 
 }
