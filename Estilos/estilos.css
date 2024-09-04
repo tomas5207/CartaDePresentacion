@@ -402,6 +402,12 @@ section.visible {
     top: 10px;
 }
 
+.ExL{
+    background: linear-gradient(357deg, rgb(136, 255, 9) 0%, rgb(38 33 87) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
 .presentacion{
     background: linear-gradient(to top, rgb(255 255 255 / 6%), rgb(38 33 87)), 
     url("../Imagenes/fondo.jpg");
