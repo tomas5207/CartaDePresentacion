@@ -524,8 +524,8 @@ video {
     }
 
     .video-container{
-        height: 710%;
-        width: 105%;
+        height: 880%;
+        width: 108%;
     }
 
     .proyectos{
@@ -576,6 +576,7 @@ video {
         position: relative;
         left: 12px;
     }
+
 
 }
 
