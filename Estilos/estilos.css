@@ -31,7 +31,7 @@ section{
 }
 
 nav{
-    background-color: black;
+    background-color: transparent;
     width: 100%;
 }
 
@@ -51,7 +51,7 @@ a{
 }
 
 li:hover{
-    background-color: #000b2e;
+    background-color: #ffffff;
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -84,14 +84,14 @@ video {
 #mi h2{
     padding-top: 50px;
     font-family: 'Bebas_Neue';
-    color: skyblue;
+    color: white;
     text-align: center;
 }
 
 
 .sobre-mi{
     padding-top: 50px;
-    color: skyblue;
+    color: white;
     font-family: 'Orbitron';
     font-size: 20px;
     text-align: center;
@@ -107,7 +107,7 @@ video {
     height: 250px;
     object-fit: cover;
     border: 5px solid #000b2e;
-    box-shadow: 0px 0px 10px skyblue;
+    box-shadow: 0px 0px 10px white;
     display: block;
     margin: auto;
 }
@@ -115,9 +115,9 @@ video {
 .Saludo{
     padding-top: 50px;
     font-family: 'Bebas_Neue';
-    color: skyblue;
+    color: white;
     text-align: center;
-    text-shadow: 0px 0px 10px skyblue;
+    text-shadow: 0px 0px 10px white;
 }
 
 .education-card{
@@ -163,9 +163,9 @@ video {
 
 .education-card .back{
     transform: perspective(600px) rotateY(180deg);
-    background: rgb(3, 35, 54);
+    background: #1d1d1d;
     padding: 15px;
-    color: skyblue;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -245,9 +245,9 @@ video {
 
 .work-card .back{
     transform: perspective(600px) rotateY(180deg);
-    background: rgb(3, 35, 54);
+    background: #1d1d1d;
     padding: 15px;
-    color: skyblue;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -271,7 +271,7 @@ video {
 #profesional h2{
     padding-top: 50px;
     font-family: 'Bebas_Neue';
-    color: skyblue;
+    color: white;
     text-align: center;
 }
 
@@ -389,6 +389,54 @@ video {
     margin-bottom: 10px;
 }
 
+.CV{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    width:80%;
+    background-color: rgba(116, 113, 113, 0.2);
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto; 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 3px solid rgb(247, 0, 8);
+    box-shadow: 0px 0px 10px red;
+}
+
+.img-cv{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.img-cv:hover{
+    width: 60px;
+    height: 60px;
+    transition: 0.5s;
+}
+
+.btn-cv{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    color: red;
+    border: 2px solid rgb(247, 0, 8);
+    box-shadow: 0px 0px 10px red;
+    text-shadow: 0px 0px 10px red;
+    background-color: transparent;
+}
+
+.btn-cv:hover{
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    border: 3px solid rgb(247, 0, 8);
+    transition: 0.5s;
+}
+
 
 #contact-form button[type="submit"] {
     background-color: skyblue;
@@ -439,7 +487,7 @@ video {
 
 .redes-sociales h3{
     font-family: "Bebas_Neue";
-    color: skyblue;
+    color: white;
 }
 
 .redes-sociales img:hover {
@@ -449,7 +497,7 @@ video {
 
 .tituloP{
     font-family: 'Bebas_Neue';
-    color: skyblue;
+    color: white;
     margin-bottom: 30px;
 }
 

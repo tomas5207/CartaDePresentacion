@@ -1,339 +1,765 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Estilos/estilos.css">
-    <link rel="shortcut icon" href="Imagenes/escritura.png" type="image/x-icon">
-    <title>Portafolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Portafolio - Tomás Jorcin Rodriguez</title>
+    <style>
+        @font-face {
+        font-family: 'Bebas_Neue';
+        src: url('../Fuentes/Bebas_Neue/BebasNeue-Regular.ttf');
+        }
+
+        @font-face{
+        font-family: 'Orbitron';
+        src: url('../Fuentes/Orbitron/Orbitron-Regular.ttf');
+        }
+        /* Estilos personalizados para el efecto de aparición al desplazar */
+        .reveal {
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px); /* Empieza ligeramente desplazado hacia abajo */
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0); /* Vuelve a la posición original */
+        }
+
+        /* Estilos para las tarjetas de educación y experiencia (simplificados sin el efecto flip 3D) */
+        .education-card, .work-card {
+            background-color: #2d3748; /* bg-gray-800 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            padding: 1.5rem; /* p-6 */
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .education-card img, .work-card img {
+            width: 80px; /* w-20 */
+            height: 80px; /* h-20 */
+            object-fit: cover;
+            border-radius: 0.25rem; /* rounded */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+
+        .education-card h3, .work-card h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+
+        .education-card span, .work-card span {
+            font-size: 0.875rem; /* text-sm */
+            color: #a0aec0; /* text-gray-400 */
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+
+        .education-card p, .work-card p {
+            font-size: 1rem; /* text-base */
+            color: #cbd5e0; /* text-gray-300 */
+        }
+
+        /* Estilos para el formulario de contacto */
+        .contact-form-container {
+            background-color: #2d3748; /* bg-gray-800 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            padding: 2rem; /* p-8 */
+            max-width: 500px; /* max-w-md */
+            margin: 2rem auto; /* mx-auto my-8 */
+        }
+
+        .contact-form-container h2 {
+            font-size: 2rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            text-align: center;
+            margin-bottom: 1.5rem; /* mb-6 */
+            color: white;
+        }
+
+        .contact-form-container .form-group {
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+
+        .contact-form-container label {
+            display: block;
+            margin-bottom: 0.5rem; /* mb-2 */
+            font-weight: 600; /* font-semibold */
+            color: #cbd5e0; /* text-gray-300 */
+        }
+
+        .contact-form-container input[type="text"],
+        .contact-form-container input[type="email"],
+        .contact-form-container textarea {
+            width: 100%;
+            padding: 0.75rem; /* p-3 */
+            border-radius: 0.25rem; /* rounded */
+            border: 1px solid #4a5568; /* border-gray-600 */
+            background-color: #1a202c; /* bg-gray-900 */
+            color: white;
+            font-size: 1rem; /* text-base */
+        }
+
+        .contact-form-container input[type="text"]:focus,
+        .contact-form-container input[type="email"]:focus,
+        .contact-form-container textarea:focus {
+             outline: none;
+             border-color: #4299e1; /* border-blue-500 */
+             box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* ring-2 ring-blue-500 */
+        }
+
+        .contact-form-container textarea {
+            resize: vertical; /* Permite redimensionar verticalmente */
+        }
+
+        .contact-form-container button[type="submit"] {
+            width: 100%;
+            padding: 0.75rem; /* p-3 */
+            background-color: #4299e1; /* bg-blue-500 */
+            color: white;
+            font-weight: 700; /* font-bold */
+            border: none;
+            border-radius: 0.25rem; /* rounded */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form-container button[type="submit"]:hover {
+            background-color: #3182ce; /* bg-blue-600 */
+        }
+
+        /* Estilos para las redes sociales */
+        .redes-sociales {
+            margin-top: 2rem; /* mt-8 */
+            text-align: center;
+        }
+
+        .redes-sociales h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1rem; /* mb-4 */
+            color: white;
+        }
+
+        .redes-sociales a {
+            display: inline-block;
+            margin: 0 0.5rem; /* mx-2 */
+        }
+
+        .redes-sociales img {
+            height: 30px; /* h-8 (aproximado) */
+            vertical-align: middle;
+        }
+
+        .redes-sociales img:hover {
+            transition: 0.5s;
+            transform: scale(1.1);
+        }
+
+         /* Estilos para los botones de CV */
+        .btn-cv {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            background-color: #48bb78; /* bg-green-500 */
+            color: white;
+            font-weight: 700; /* font-bold */
+            border: none;
+            border-radius: 0.5rem; /* rounded-lg */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0.5rem; /* m-2 */
+        }
+
+        .btn-cv:hover {
+            background-color: #38a169; /* bg-green-600 */
+        }
+
+        .img-cv {
+            width: 24px; /* w-6 */
+            height: 24px; /* h-6 */
+            margin-right: 0.5rem; /* mr-2 */
+        }
+
+        /* Estilos para la sección de proyectos */
+        .proyectos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+            gap: 1.5rem; /* gap-6 */
+            margin-top: 2rem; /* mt-8 */
+        }
+
+        .proyectos img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            transition: transform 0.3s ease;
+        }
+
+        .proyectos img:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+        }
+
+        /* Estilos para el título de proyectos */
+        .tituloP {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 2rem; /* mb-8 */
+            color: white;
+        }
+
+        /* Estilos para la imagen principal */
+        .foto {
+            width: 150px; /* w-40 */
+            height: 150px; /* h-40 */
+            object-fit: cover;
+            border-radius: 9999px; /* rounded-full */
+            margin-bottom: 1.5rem; /* mb-6 */
+            border: 4px solid white; /* border-4 border-white */
+        }
+
+         /* Estilos para el contenedor principal */
+        .contenedor-principal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1rem; /* py-16 px-4 */
+        }
+
+        /* Estilos para el saludo principal */
+        .Saludo {
+            font-size: 2.5rem; /* text-4xl sm:text-5xl */
+            font-weight: 700; /* font-bold */
+            color: white;
+            margin-bottom: 2rem; /* mb-8 */
+        }
+
+        /* Estilos para la sección "Sobre mi" */
+        #mi {
+            padding: 4rem 1rem; /* py-16 px-4 */
+        }
+
+        .sobre-mi {
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.75rem; /* leading-relaxed */
+            text-align: center;
+            margin-bottom: 3rem; /* mb-12 */
+            max-width: 800px; /* max-w-3xl */
+            margin-left: auto;
+            margin-right: auto;
+            color: #cbd5e0; /* text-gray-300 */
+        }
+
+        #mi h2 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            text-align: center;
+            margin-bottom: 2rem; /* mb-8 */
+            color: white;
+        }
+
+        .contenido-mi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+            gap: 1.5rem; /* gap-6 */
+            max-width: 1000px; /* max-w-screen-lg */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+         /* Estilos para la sección "Perfil profesional" */
+        #profesional {
+             padding: 4rem 1rem; /* py-16 px-4 */
+        }
+
+        #profesional h2 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            text-align: center;
+            margin-bottom: 2rem; /* mb-8 */
+            color: white;
+        }
+
+        .contenido-profesional {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+            gap: 1.5rem; /* gap-6 */
+            max-width: 800px; /* max-w-screen-md */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Estilos para la sección de Curriculum */
+        #curriculum {
+            padding: 4rem 1rem; /* py-16 px-4 */
+            text-align: center;
+        }
+
+        .CV {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem; /* gap-4 */
+        }
+
+        /* Estilos para la sección de Servicios Freelancer */
+        #servicios {
+            padding: 4rem 1rem; /* py-16 px-4 */
+        }
+
+        #servicios h2 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            text-align: center;
+            margin-bottom: 1.5rem; /* mb-6 */
+            color: white;
+        }
+
+        #servicios p {
+            font-size: 1.125rem; /* text-lg */
+            text-align: center;
+            margin-bottom: 2rem; /* mb-8 */
+            color: #cbd5e0; /* text-gray-300 */
+        }
+
+        #servicios .container {
+             max-width: 1200px; /* max-w-screen-xl */
+             margin-left: auto;
+             margin-right: auto;
+        }
+
+        #servicios .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #servicios .col-md-4 {
+            width: 100%;
+            margin-bottom: 1.5rem; /* mb-6 */
+            padding: 0 1rem; /* px-4 */
+        }
+
+        @media (min-width: 768px) { /* md breakpoint */
+            #servicios .col-md-4 {
+                width: calc(100% / 3); /* 3 columns on medium screens */
+            }
+        }
+
+        #servicios .mb-3 {
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+
+        #servicios .fs-1 {
+            font-size: 3rem; /* text-5xl */
+        }
+
+        #servicios .text-primary { color: #4299e1; /* blue-500 */ }
+        #servicios .text-success { color: #48bb78; /* green-500 */ }
+        #servicios .text-warning { color: #f6e05e; /* yellow-400 */ }
+
+
+         /* Estilos para la sección de Contacto */
+        #contacto {
+            padding: 4rem 1rem; /* py-16 px-4 */
+        }
+
+         /* Estilos para la sección de Proyectos */
+        #proyectos {
+            padding: 4rem 1rem; /* py-16 px-4 */
+        }
+
+
+        /* Estilos generales del cuerpo */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* bg-gray-900 */
+            color: #e2e8f0; /* text-gray-200 */
+            line-height: 1.6;
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            background-color: #2d3748; /* bg-gray-800 */
+            padding: 1.5rem 0; /* py-6 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow-md */
+        }
+
+        header .container {
+            max-width: 1200px; /* max-w-screen-xl */
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem; /* px-4 */
+        }
+
+        header h1 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: white;
+        }
+
+        /* Estilos para los enlaces de navegación */
+        .nav-link {
+            color: white;
+            font-size: 25px; 
+            transition: color 0.5s ease;
+        }
+
+        .nav-link:hover {
+            color: #2d3748; /* Color negro al pasar el ratón */
+            background-color: white;
+            border-radius: 15px;
+            transition: 0.6s; 
+        }
+
+        /* Estilos para el toggler del menú en pantallas pequeñas */
+        .navbar-toggler {
+            display: block; /* Muestra el toggler por defecto */
+            padding: 0.5rem 0.75rem;
+            font-size: 1.25rem;
+            line-height: 1;
+            background-color: #cbd5e0; /* bg-gray-300 */
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+        }
+
+        .navbar-toggler-icon {
+            display: inline-block;
+            width: 1.5em;
+            height: 1.5em;
+            vertical-align: middle;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+             /* Icono de hamburguesa SVG */
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .proyectos img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Asegura que las imágenes se ajusten dentro de los contenedores */
+        border-radius: 10px; /* Un pequeño borde redondeado, opcional */
+        transition: transform 0.3s ease;
+        }
+
+        .proyectos img:hover {
+         transform: scale(1.05); /* Efecto de zoom al pasar el ratón por encima */
+        }
+
+        /* Oculta el menú por defecto y lo muestra en pantallas md y superiores */
+        #menu {
+            display: none;
+            flex-grow: 1;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) { /* md breakpoint */
+            .navbar-toggler {
+                display: none; /* Oculta el toggler en pantallas md y superiores */
+            }
+            #menu {
+                display: flex !important; /* Muestra el menú en pantallas md y superiores */
+                justify-content: flex-end; /* Alinea los elementos a la derecha */
+            }
+             header nav ul {
+                flex-direction: row;
+                gap: 1rem; /* space-x-4 */
+            }
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #2d3748; /* bg-gray-800 */
+            padding: 1.5rem 0; /* py-6 */
+            text-align: center;
+            color: #cbd5e0; /* text-gray-300 */
+            margin-top: 4rem; /* mt-16 */
+        }
+
+
+    </style>
 </head>
 <body>
-    <header>
-        <div class="navigation-wrap start-header start-style">
-            <style>
-                .nav-link {
-                color: skyblue; 
-                font-size: 28px;
-                transition: color 0.5s ease; 
-                }
-            
-                .nav-link:hover {
-                color: rgb(0, 104, 230);
-                text-shadow: 0 0 10px skyblue;
-                }
-            </style>
-        <nav class="navbar navbar-expand-md">
-                <button class="navbar-toggler collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false">
+
+    
+    <div class="bg-gray-900 text-gray-200 min-h-screen"> <header>
+            <div class="container mx-auto flex justify-between items-center px-4">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-            <div class="collapse navbar-collapse"  id="menu">
-                <ul class="navbar-nav" id="main">
-                    <li class="nav-item"><a href="#principal" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#mi" class="nav-link">Sobre mi</a></li>
-                    <li class="nav-item"><a href="#profesional" class="nav-link">Perfil profesional</a></li>
-                    <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
-                    <li class="nav-item"><a href="#proyectos" class="nav-link">Mis proyectos</a></li>
-                </ul>
+                <nav id="menu" class="hidden md:flex flex-col md:flex-row md:items-center md:space-x-4 mt-4 md:mt-0 w-full md:w-auto">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
+                        <li><a href="#principal" class="nav-link block">Home</a></li>
+                        <li><a href="#mi" class="nav-link block">Sobre mi</a></li>
+                        <li><a href="#profesional" class="nav-link block ">Perfil profesional</a></li>
+                        <li><a href="#curriculum" class="nav-link block ">Curriculum</a></li>
+                        <li><a href="#servicios" class="nav-link block ">Servicios freelancer</a></li>
+                        <li><a href="#contacto" class="nav-link block ">Contacto</a></li>
+                        <li><a href="#proyectos" class="nav-link block ">Mis proyectos</a></li>
+                    </ul>
+                </nav>
             </div>
-        </nav>
+        </header>
+
+        <section id="principal" class="reveal">
+            <div class="contenedor-principal flex flex-col items-center justify-center text-center">
+                 <img src="Imagenes/ImagenPortafolio.jpg" alt="Foto de perfil" class="foto w-40 h-40 object-cover rounded-full mb-6 border-4 border-white" onerror="this.onerror=null; this.src='https://placehold.co/150x150/4a5568/cbd5e0?text=Imagen+no+disponible';">
+                <h1 class="Saludo text-4xl sm:text-5xl font-bold text-white mb-8">Hola, mi nombre es Tomás Jorcin Rodriguez 🙋🏻‍♂️</h1>
+            </div>
+        </section>
+
+        <section id="mi" class="py-16 px-4">
+            <p class="sobre-mi reveal text-lg leading-relaxed text-center mb-12 max-w-3xl mx-auto text-gray-300">
+                Soy un Analista Programador con experiencia en desarrollo web, desarrollo fullstack, recolección y carga de datos, hosting, etc.
+                Actualmente empleo como freelancer, realizando tanto tareas sencillas como complejas. Cada cliente con el cual trabajo, lo tomo
+                con la mayor de las responsabilidades. Si estas interesado en contar con mis servicios, no dudes en contactarme, estoy disponible
+                para colaborar y potenciar el proyecto que tengas en mente.
+            </p>
+            <h2 class="reveal text-4xl font-bold text-center mb-8 text-white">Educación</h2>
+            <div class="contenido-mi reveal grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-lg mx-auto">
+                <div class="education-card bg-gray-800 rounded-lg shadow-lg p-6 text-center text-white">
+                     <img src="Imagenes/CTC.jpg" alt="Logo CTC Rosario" class="w-20 h-20 object-cover rounded mb-4" onerror="this.onerror=null; this.src='https://placehold.co/80x80/4a5568/cbd5e0?text=Imagen+no+disponible';">
+                    <h3 class="text-xl font-semibold mb-2">CTC Rosario</h3>
+                    <span class="text-sm text-gray-400 mb-2">Abril 2019 - Abril 2023</span>
+                    <p class="text-base text-gray-300">Aquí aprendí muchas cosas basicas sobre la programación, desde como planificar los proyectos hasta finalmente llevarlos a cabo programando.</p>
+                </div>
+                <div class="education-card bg-gray-800 rounded-lg shadow-lg p-6 text-center text-white">
+                     <img src="Imagenes/Coder.jpg" alt="Logo CoderHouse" class="w-20 h-20 object-cover rounded mb-4" onerror="this.onerror=null; this.src='https://placehold.co/80x80/4a5568/cbd5e0?text=Imagen+no+disponible';">
+                    <h3 class="text-xl font-semibold mb-2">CoderHouse</h3>
+                    <span class="text-sm text-gray-400 mb-2">Agosto 2023 - Enero 2024</span>
+                    <p class="text-base text-gray-300">Realice un curso de Desarrollador Front-End el cual estaba englobado en 3 cursos diferentes. Dichos cursos eran de Desarrollo Web, JavaScript y ReactJs.</p>
+                </div>
+                <div class="education-card bg-gray-800 rounded-lg shadow-lg p-6 text-center text-white">
+                     <img src="Imagenes/Henry.jpg" alt="Logo Henry bootcamp" class="w-20 h-20 object-cover rounded mb-4" onerror="this.onerror=null; this.src='https://placehold.co/80x80/4a5568/cbd5e0?text=Imagen+no+disponible';">
+                    <h3 class="text-xl font-semibold mb-2">Henry bootcamp</h3>
+                    <span class="text-sm text-gray-400 mb-2">Noviembre 2023 - Abril 2024</span>
+                    <p class="text-base text-gray-300">Reforce conocimientos de programación y obtuve una experiencia similar a la que viven los developers profesionales a la hora de trabajar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="profesional" class="py-16 px-4">
+            <h2 class="reveal text-4xl font-bold text-center mb-8 text-white">Experiencia Laboral</h2>
+            <div class="contenido-profesional reveal grid grid-cols-1 md:grid-cols-2 gap-6 max-w-screen-md mx-auto">
+                <div class="work-card bg-gray-800 rounded-lg shadow-lg p-6 text-center text-white">
+                     <img src="Imagenes/Brokerware.jpg" alt="Logo Brokerware" class="w-20 h-20 object-cover rounded mb-4" onerror="this.onerror=null; this.src='https://placehold.co/80x80/4a5568/cbd5e0?text=Imagen+no+disponible';">
+                    <h3 class="text-xl font-semibold mb-2">Brokerware</h3>
+                    <span class="text-sm text-gray-400 mb-2">Tiempo en el cargo: 6 meses</span>
+                    <span class="text-sm text-gray-400 mb-2">Developer Jr</span>
+                    <p class="text-base text-gray-300">Trabaje en el mantenimiento y resolución de tickets, usando React con GIT para lo relacionado al Front y Genexus con SQL Server y C# para lo relacionado al back.</p>
+                </div>
+                <div class="work-card bg-gray-800 rounded-lg shadow-lg p-6 text-center text-white">
+                     <img src="Imagenes/Freelancer.jpg" alt="Icono Freelancer" class="w-20 h-20 object-cover rounded mb-4" onerror="this.onerror=null; this.src='https://placehold.co/80x80/4a5568/cbd5e0?text=Imagen+no+disponible';">
+                    <h3 class="text-xl font-semibold mb-2">Freelancer</h3>
+                    <span class="text-sm text-gray-400 mb-2">Tiempo en el cargo: Trabajo actual</span>
+                    <span class="text-sm text-gray-400 mb-2">FullStack Developer</span>
+                    <p class="text-base text-gray-300">Trabajo de manera independiente como freelancer hasta conseguir un trabajo formal. Realizo principalmente páginas web, pero para cualquier otro trabajo relacionado con software estoy disponible. Contactame si es que te interesan mis servicios.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="curriculum" class="reveal py-16 px-4 text-center">
+            <div class="CV flex flex-wrap justify-center gap-4">
+                <a href="Tomás Jorcin CV.pdf" download="Tomás Jorcin CV"><button class="btn-cv inline-flex items-center py-3 px-6 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition duration-300 m-2"><img src="Iconos/pdf1.png" alt="Icono PDF" class="img-cv w-6 h-6 mr-2" onerror="this.onerror=null; this.src='https://placehold.co/24x24/48bb78/ffffff?text=PDF';">Descargar CV</button></a>
+                <a href="Tomás Jorcin CV(Ingles).pdf" download="Tomás Jorcin CV(Ingles)"><button class="btn-cv inline-flex items-center py-3 px-6 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition duration-300 m-2"><img src="Iconos/pdf1.png" alt="PDF Icon" class="img-cv w-6 h-6 mr-2" onerror="this.onerror=null; this.src='https://placehold.co/24x24/48bb78/ffffff?text=PDF';">Dowload CV(English)</button></a>
+            </div>
+        </section>
+
+        <section id="servicios" class="reveal py-16 px-4">
+            <div class="container mx-auto max-w-screen-xl">
+                <h2 class="text-center text-4xl font-bold mb-6 text-white">Servicios Freelance</h2>
+                <p class="text-center text-lg mb-8 text-gray-300">Brindo soluciones digitales claras y funcionales para personas, emprendedores y negocios.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="mb-6 px-4 flex flex-col items-center">
+                        <div class="mb-3 text-5xl text-green-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm-2 9v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2zm1 1h14v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/></svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2 text-white">Desarrollo Web</h4>
+                        <p class="text-base text-gray-300">Diseño y desarrollo páginas web modernas: desde tiendas online hasta sitios informativos para empresas o proyectos personales.</p>
+                    </div>
+                    <div class="mb-6 px-4 flex flex-col items-center">
+                        <div class="mb-3 text-5xl text-blue-500">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M2 15c0 1.66 4.03 3 9 3s9-1.34 9-3v-2c0 1.66-4.03 3-9 3s-9-1.34-9-3zm0-5c0 1.66 4.03 3 9 3s9-1.34 9-3V8c0 1.66-4.03 3-9 3s-9-1.34-9-3zm0-5c0 1.66 4.03 3 9 3s9-1.34 9-3V3c0 1.66-4.03 3-9 3s-9-1.34-9-3z"/></svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2 text-white">Recolección y Organización de Datos</h4>
+                        <p class="text-base text-gray-300">Recolecto información de productos y/o servicios y la cargo en bases de datos o la guardo en documentos como Excel de forma clara y útil.</p>
+                    </div>
+                    <div class="mb-6 px-4 flex flex-col items-center">
+                        <div class="mb-3 text-5xl text-white-400">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14a6 6 0 0 0 6 6h13a5 5 0 0 0 0-10m-4.85 7.18L11 13.83v4.34L9.47 16.7l-1.41 1.41L12 21.5l4.94-4.94l-1.41-1.41z"/></svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2 text-white">Asesoramiento en Hosting</h4>
+                        <p class="text-base text-gray-300">Te ayudo a poner tu sitio online de forma simple y económica, ya sea guiándote o gestionando la gran parte de este por vos.</p>
+                    </div>
+                </div>
+
+                <p class="text-center text-lg mt-8 mb-4 text-gray-300">Pasos realizados durante el desarrollo de un proyecto: </p>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                     <div class="mb-6 px-4 flex flex-col items-center">
+                        <div class="mb-3 text-5xl text-blue-500">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H6l-2 2V4h16zM7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2 text-white">Paso 1</h4>
+                        <p class="text-base text-gray-300">Charla sobre el proyecto y objetivos del mismo con el cliente(usted)</p>
+                    </div>
+                     <div class="mb-6 px-4 flex flex-col items-center">
+                        <div class="mb-3 text-5xl text-red-500">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-7 0c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1m7 18H5V5h14zm-2-5v-2H7v2zm-4-4v-2H7v2z"/></svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2 text-white">Paso 2</h4>
+                        <p class="text-base text-gray-300">Planificación del proyecto. Tanto tiempo estimado de entrega como costo</p>
+                    </div>
+                     <div class="mb-6 px-4 flex flex-col items-center">
+                        <div class="mb-3 text-5xl text-yellow-500">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8zm-2 0v6h6zm2 13v-2H8v2zm0-4v-2H8v2z"/></svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2 text-white">Paso 3</h4>
+                        <p class="text-base text-gray-300">Propuesta al cliente sobre el proyecto en general, incluido costos y tiempo estimado</p>
+                    </div>
+                     <div class="mb-6 px-4 flex flex-col items-center">
+                        <div class="mb-3 text-5xl text-green-500">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M14.6 16.6L19.2 12l-4.6-4.6L16 6l6 6l-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6l6 6z"/></svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2 text-white">Paso 4</h4>
+                        <p class="text-base text-gray-300">Desarrollo y entrega del proyecto</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="reveal py-16 px-4">
+            <div class="contact-form-container bg-gray-800 rounded-lg shadow-lg p-8 max-w-md mx-auto my-8">
+                <h2 class="text-3xl font-bold text-center mb-6 text-white">Contactame</h2>
+                <form id="contact-form" method="post">
+                    <div class="form-group mb-6">
+                        <label for="name" class="block mb-2 font-semibold text-gray-300">Nombre:</label>
+                        <input type="text" id="name" name="name" required class="w-full p-3 rounded border border-gray-600 bg-gray-900 text-white text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="form-group mb-6">
+                        <label for="email" class="block mb-2 font-semibold text-gray-300">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required class="w-full p-3 rounded border border-gray-600 bg-gray-900 text-white text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="form-group mb-6">
+                        <label for="message" class="block mb-2 font-semibold text-gray-300">Mensaje:</label>
+                        <textarea id="message" name="message" rows="5" cols="30" required class="w-full p-3 rounded border border-gray-600 bg-gray-900 text-white text-base resize-vertical focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full p-3 bg-blue-500 text-white font-bold border-none rounded cursor-pointer transition duration-300 hover:bg-blue-600">Enviar</button>
+                </form>
+            </div>
+            <div class="redes-sociales mt-8 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-white">Redes Sociales:</h3>
+                <a href="https://www.linkedin.com/in/tom%C3%A1s-jorcin-044653202/" target="_blank">
+                    <img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin class="h-8 inline-block align-middle mx-2" />
+                </a>
+                <a href="https://github.com/tomas5207" target="_blank">
+                    <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github class="h-8 inline-block align-middle mx-2" />
+                </a>
+            </div>
+        </section>
+
+        <section id="proyectos" class="reveal py-16 px-4">
+            <h2 class="tituloP reveal text-center text-4xl font-bold mb-8 text-white">Hechale un vistazo a algunos de mis proyectos</h2>
+            <div class="proyectos reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                <div>
+                     <a href="https://intachables.com/" target="_blank" rel="noreferrer"><img src="Imagenes/proyecto1.png" alt="Proyecto 1" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/400x300/4a5568/cbd5e0?text=Imagen+no+disponible';"></a>
+                </div>
+                <div>
+                     <a href="https://saladejuegos.netlify.app/" target="_blank" rel="noreferrer"> <img src="Imagenes/proyecto2.png" alt="Proyecto 2" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/400x300/4a5568/cbd5e0?text=Imagen+no+disponible';"></a>
+                </div>
+                <div>
+                     <a href="https://ramcid.itch.io/escape-from-dysnomia" target="_blank" rel="noreferrer"> <img src="Imagenes/Proyecto3.png" alt="Proyecto 3" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/400x300/4a5568/cbd5e0?text=Imagen+no+disponible';"></a>
+                </div>
+                <div>
+                     <a href="https://petpalace-lilac.vercel.app/" target="_blank" rel="noreferrer"><img src="Imagenes/Proyecto4.png" alt="Proyecto 4" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/400x300/4a5568/cbd5e0?text=Imagen+no+disponible';"></a>
+                </div>
+            </div>
+        </section>
     </div>
-    </header>
-    <section id="principal" class="reveal">
-        <div class="contenedor-principal">
-        <img src="Imagenes/ImagenPortafolio.jpg" alt="foto" class="foto">
-            <div class="contenedor-principal">
-                <h1 class="Saludo">Hola, bienvenido a mi Portafolio 🙋🏻‍♂️</h1>
-            </div>
-        </div>
-    </div>
-    </section>
-    <section id="mi">
-        <p class="sobre-mi reveal">
-            Soy Tomás Jorcin Rodriguez, tengo 23 años y soy Analista Programador. Me gradué de la facultad en abril de 2023 y a partir de ahí seguí haciendo cosas 
-            en busca de crecer como profesional. Realice un curso de Frontend en CoderHouse para mejorar en el desarrollo Frontend, un curso de Desarrollo FullStack Web 
-            en el Bootcamp SoyHenry y tuve mi primera experiencia laboral como Developer Jr en Brokerware. Actualmente trabajo como freelancer mientras busco mi próximo 
-            empleo, con el afán de seguir creciendo como profesional y poder afianzarme en el mundo del desarrollo de software.
-        </p>
-        <h2 class="reveal">Educación</h2>
-        <div class="contenido-mi reveal">
-            <div class="education-card">
-                <div class="face front">
-                    <img src="Imagenes/CTC.jpg" alt="">
-                    <h3>CTC Rosario</h3>
-                </div>
-                <div class="face back">
-                    <h3>CTC Rosario</h3>
-                    <span>Abril 2019 - Abril 2023</span>
-                    <p>Aquí aprendí muchas cosas basicas sobre la programación, desde como planificar los proyectos
-                    hasta finalmente llevarlos a cabo programando.
-                    </p>
-                </div>
-            </div>
-            <div class="education-card">
-                <div class="face front">
-                    <img src="Imagenes/Coder.jpg" alt="">
-                    <h3>CoderHouse</h3>
-                </div>
-                <div class="face back">
-                    <h3>CoderHouse</h3>
-                    <span>Agosto 2023 - Enero 2024</span>
-                    <p>Realice un curso de Desarrollador Front-End el cual estaba englobado en 3 cursos diferentes.
-                    Dichos cursos eran de Desarrollo Web, JavaScript y ReactJs.
-                    </p>
-                </div>
-            </div>
-            <div class="education-card">
-                <div class="face front">
-                    <img src="Imagenes/Henry.jpg" alt="">
-                    <h3>Henry bootcamp</h3>
-                </div>
-                <div class="face back">
-                    <h3>Henry bootcamp</h3>
-                    <span>Noviembre 2023 - Abril 2024</span>
-                    <p>Reforce conocimientos de programación y obtuve una experiencia similar a la que 
-                    viven los developers profesionales a la hora de trabajar.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="profesional">
-        <h2 class="reveal">Experiencia Laboral</h2>
-        <div class="contenido-profesional reveal">
-        <div class="work-card">
-            <div class="face front">
-                <img src="Imagenes/Brokerware.jpg" alt="">
-                <h3>Brokerware</h3>
-            </div>
-            <div class="face back">
-                <h3>Brokerware</h3>
-                <span>Tiempo en el cargo: 6 meses</span>
-                <span>Developer Jr</span>
-                <p>Trabaje en el mantenimiento y resolución de tickets, 
-                usando React con GIT para lo relacionado al Front y Genexus 
-                con SQL Server y C# para lo relacionado al back.
-                </p>
-            </div>
-        </div>
-        <div class="work-card">
-            <div class="face front">
-                <img src="Imagenes/Freelancer.jpg" alt="">
-                <h3>Freelancer</h3>
-            </div>
-            <div class="face back">
-                <h3>Freelancer</h3>
-                <span>Tiempo en el cargo: Trabajo actual</span>
-                <span>FullStack Developer</span>
-                <p>
-                    Trabajo de manera independiente como freelancer hasta conseguír un trabajo formal.
-                    Realizo principalmente páginas web, pero para cualquier otro trabajo relacionado con
-                    software estoy disponible. Contactame si es que te interesan mis servicios.
-                </p>
-            </div>
-        </div>
-        <div class="Lenguajes reveal">
-            <h2 class="title">Languages y herramientas que he usado:</h2>
-            <div class="grid-container">
-            <div class="grid-item">
-                <h3 align="center">Lenguajes de programación</h3>
-                <p align="center">
-                <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40" />
-                </a>
-                <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40" />
-                </a>
-                <a href="https://www.java.com" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40" />
-                </a>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40" />
-                </a>
-                <a href="https://www.genexus.com/es/" target="_blank" rel="noreferrer">
-                    <img src="Imagenes/genexus.png" alt="genexus" width="40" height="40" />
-                </a>
-                </p>
-            </div>
-            <div class="grid-item">
-                <h3 align="center">Desarrollo FrontEnd</h3>
-                <p align="center">
-                <a href="https://getbootstrap.com" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40" />
-                </a>
-                <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40" />
-                </a>
-                <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40" />
-                </a>
-                <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40" />
-                </a>
-                <a href="https://redux.js.org" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40" />
-                </a>
-                <a href="https://sass-lang.com" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40" />
-                </a>
-                </p>
-            </div>
-            <div class="grid-item">
-                <h3 align="center">Desarrollo BackEnd</h3>
-                <p align="center">
-                <a href="https://expressjs.com" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40" />
-                </a>
-                <a href="https://nodejs.org" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" />
-                </a>
-                <a href="https://spring.io/" target="_blank" rel="noreferrer">
-                    <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="40" height="40" />
-                </a>
-                </p>
-            </div>
-            <div class="grid-item">
-                <h3 align="center">Bases de datos</h3>
-                <p align="center">
-                <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer">
-                    <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40" />
-                </a>
-                <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40" />
-                </a>
-                <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40" />
-                </a>
-                </p>
-            </div>
-            <div class="grid-item">
-                <h3 align="center">Software</h3>
-                <p align="center">
-                <a href="https://postman.com" target="_blank" rel="noreferrer">
-                    <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40" />
-                </a>
-                </p>
-            </div>
-            <div class="grid-item">
-                <h3 align="center">Motores de juego</h3>
-                <p align="center">
-                <a href="https://unity.com/" target="_blank" rel="noreferrer">
-                    <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40" />
-                </a>
-                </p>
-            </div>
-            <div class="grid-item">
-                <h3 align="center">Otros</h3>
-                <p align="center">
-                <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-                    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40" />
-                </a>
-                </p>
-            </div>
-            </div>
-        </div>
-        </div>
-    </section>
-    <section id="contacto" class="reveal">
-        <div align="center" class="contact-form-container">
-            <h2>Contactame</h2>
-            <form id="contact-form" method="post">
-                <div class="form-group">
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-    
-                <div class="form-group">
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-    
-                <div class="form-group">
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" rows="5" cols="30" required></textarea>
-                </div>
-    
-                <button type="submit">Enviar</button>
-            </form>
-        </div>    
-        <div align="center" class="redes-sociales">
-            <h3>Redes Sociales:</h3>
-            <a href="https://www.linkedin.com/in/tom%C3%A1s-jorcin-044653202/" target="_blank">
-            <img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" />
-            </a> 
-            <a href="https://github.com/tomas5207" target="_blank">
-                <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
-            </a>
-        </div>
-    </section>
-    <section id="proyectos">
-        <h2 align="center" class="tituloP reveal">Hechale un vistazo a algunos de mis proyectos</h2>
-        <div class="proyectos reveal">
-            <div>
-                <a href="https://intachables.com/" target="_blank" rel="noreferrer"><img src="Imagenes/Proyecto1.png" alt="proyectos"></a>
-            </div>
-            <div>
-                <a href="https://saladejuegos.netlify.app/" target="_blank" rel="noreferrer"> <img src="Imagenes/Proyecto2.png" alt="proyectos"></a>
-            </div>
-            <div>
-                <a href="https://ramcid.itch.io/escape-from-dysnomia" target="_blank" rel="noreferrer"> <img src="Imagenes/Proyecto3.png" alt="proyectos"></a>
-            </div>
-            <div>
-                <a href="https://petpalace-lilac.vercel.app/" target="_blank" rel="noreferrer"><img src="Imagenes/Proyecto4.png" alt="proyectos"></a>
-            </div>
-        </div>
-    </section>
-    <div class="video-container">
-        <video muted autoplay loop>
-            <source src="Imagenes/Fondo.mp4" type="video/mp4">
-        </video>
-    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
+     <script>
 
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+
+        const serviceID = "service_3umwuuc";
+
+        const templateID = "template_8zj93yh";
+
+        const publicKey = "fa-DZWj3Ti3MRpGGh";
+
+
+
+        emailjs.sendForm(serviceID, templateID, event.target, publicKey)
+
+            .then(() => {
+
+                Swal.fire({
+
+                    icon: 'success',
+
+                    title: 'Mensaje enviado con éxito',
+
+                    text: 'Muchas gracias por contactarme. Responderé lo más pronto posible.',
+
+                });
+
+            })
+
+            .catch((error) => {
+
+                Swal.fire({
+
+                    icon: 'error',
+
+                    title: 'Oops...',
+
+                    text: 'No se pudo enviar el email. Por favor, intenta de nuevo.',
+
+                });
+
+            });
+
+    });
+
+    </script>
     <script>
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault();
+        document.addEventListener('scroll', function () {
+            const reveals = document.querySelectorAll('.reveal');
 
-        const serviceID = "service_iz70z1f";
-        const templateID = "template_85jzk9m";
-        const publicKey = "fa-DZWj3Ti3MRpGGh";
+            reveals.forEach(function (element) {
+                const elementRect = element.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
 
-        emailjs.sendForm(serviceID, templateID, event.target, publicKey)
-            .then(() => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Mensaje enviado con éxito',
-                    text: 'Muchas gracias por contactarme. Responderé lo más pronto posible.',
-                });
-            })
-            .catch((error) => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'No se pudo enviar el email. Por favor, intenta de nuevo.',
-                });
+                // Verifica si el elemento está parcialmente visible en el viewport
+                if (elementRect.top < windowHeight && elementRect.bottom > 0) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.remove('active');
+                }
             });
-    });
+        });
     </script>
-    <script>
-    document.addEventListener('scroll', function () {
-    const reveals = document.querySelectorAll('.reveal');
-
-    reveals.forEach(function (element) {
-        const elementRect = element.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        // Verifica si el elemento está parcialmente visible en el viewport
-        if (elementRect.top < windowHeight && elementRect.bottom > 0) {
-            element.classList.add('active');
-        } else {
-            element.classList.remove('active');
-        }
-    });
-});
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
