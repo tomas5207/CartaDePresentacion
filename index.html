@@ -498,26 +498,9 @@
 <body>
 
     
-    <div class="bg-gray-900 text-gray-200 min-h-screen"> <header>
-            <div class="container mx-auto flex justify-between items-center px-4">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <nav id="menu" class="hidden md:flex flex-col md:flex-row md:items-center md:space-x-4 mt-4 md:mt-0 w-full md:w-auto">
-                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
-                        <li><a href="#principal" class="nav-link block">Home</a></li>
-                        <li><a href="#mi" class="nav-link block">Sobre mi</a></li>
-                        <li><a href="#profesional" class="nav-link block ">Perfil profesional</a></li>
-                        <li><a href="#curriculum" class="nav-link block ">Curriculum</a></li>
-                        <li><a href="#servicios" class="nav-link block ">Servicios freelancer</a></li>
-                        <li><a href="#contacto" class="nav-link block ">Contacto</a></li>
-                        <li><a href="#proyectos" class="nav-link block ">Mis proyectos</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+    <div class="bg-gray-900 text-gray-200 min-h-screen">
 
-        <section id="principal" class="reveal">
+        <section id="principal">
             <div class="contenedor-principal flex flex-col items-center justify-center text-center">
                  <img src="Imagenes/ImagenPortafolio.jpg" alt="Foto de perfil" class="foto w-40 h-40 object-cover rounded-full mb-6 border-4 border-white" onerror="this.onerror=null; this.src='https://placehold.co/150x150/4a5568/cbd5e0?text=Imagen+no+disponible';">
                 <h1 class="Saludo text-4xl sm:text-5xl font-bold text-white mb-8">Hola, mi nombre es Tomás Jorcin Rodriguez 🙋🏻‍♂️</h1>
@@ -525,14 +508,14 @@
         </section>
 
         <section id="mi" class="py-16 px-4">
-            <p class="sobre-mi reveal text-lg leading-relaxed text-center mb-12 max-w-3xl mx-auto text-gray-300">
+            <p class="sobre-mi text-lg leading-relaxed text-center mb-12 max-w-3xl mx-auto text-gray-300">
                 Soy un Analista Programador con experiencia en desarrollo web, desarrollo fullstack, recolección y carga de datos, hosting, etc.
                 Actualmente empleo como freelancer, realizando tanto tareas sencillas como complejas. Cada cliente con el cual trabajo, lo tomo
                 con la mayor de las responsabilidades. Si estas interesado en contar con mis servicios, no dudes en contactarme, estoy disponible
                 para colaborar y potenciar el proyecto que tengas en mente.
             </p>
-            <h2 class="reveal text-4xl font-bold text-center mb-8 text-white">Educación</h2>
-           <div class="contenido-mi reveal grid grid-cols-2 md:grid-cols-2 gap-6 max-w-screen-lg mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-8 text-white">Educación</h2>
+           <div class="contenido-mi grid grid-cols-2 md:grid-cols-2 gap-6 max-w-screen-lg mx-auto">
                 <div class="education-card bg-gray-800 rounded-lg shadow-lg p-6 text-center text-white">
                      <img src="Imagenes/CTC.jpg" alt="Logo CTC Rosario" class="w-20 h-20 object-cover rounded mb-4" onerror="this.onerror=null; this.src='https://placehold.co/80x80/4a5568/cbd5e0?text=Imagen+no+disponible';">
                     <h3 class="text-xl font-semibold mb-2">CTC Rosario</h3>
@@ -561,8 +544,8 @@
         </section>
 
         <section id="profesional" class="py-16 px-4">
-            <h2 class="reveal text-4xl font-bold text-center mb-8 text-white">Experiencia Laboral</h2>
-            <div class="contenido-profesional reveal grid grid-cols-2 md:grid-cols-2 gap-6 max-w-screen-md mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-8 text-white">Experiencia Laboral</h2>
+            <div class="contenido-profesional grid grid-cols-2 md:grid-cols-2 gap-6 max-w-screen-md mx-auto">
                 <div class="work-card bg-gray-800 rounded-lg shadow-lg p-6 text-center text-white">
                      <img src="Imagenes/Brokerware.jpg" alt="Logo Brokerware" class="w-20 h-20 object-cover rounded mb-4" onerror="this.onerror=null; this.src='https://placehold.co/80x80/4a5568/cbd5e0?text=Imagen+no+disponible';">
                     <h3 class="text-xl font-semibold mb-2">Brokerware</h3>
@@ -580,14 +563,14 @@
             </div>
         </section>
 
-        <section id="curriculum" class="reveal py-16 px-4 text-center">
+        <section id="curriculum" class="py-16 px-4 text-center">
             <div class="CV flex flex-wrap justify-center gap-4">
                 <a href="Tomás Jorcin CV.pdf" download="Tomás Jorcin CV"><button class="btn-cv inline-flex items-center py-3 px-6 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition duration-300 m-2"><img src="Iconos/pdf1.png" alt="Icono PDF" class="img-cv w-6 h-6 mr-2" onerror="this.onerror=null; this.src='https://placehold.co/24x24/48bb78/ffffff?text=PDF';">Descargar CV</button></a>
                 <a href="Tomás Jorcin CV(Ingles).pdf" download="Tomás Jorcin CV(Ingles)"><button class="btn-cv inline-flex items-center py-3 px-6 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition duration-300 m-2"><img src="Iconos/pdf1.png" alt="PDF Icon" class="img-cv w-6 h-6 mr-2" onerror="this.onerror=null; this.src='https://placehold.co/24x24/48bb78/ffffff?text=PDF';">Download CV(English)</button></a>
             </div>
         </section>
 
-        <section id="servicios" class="reveal py-16 px-4">
+        <section id="servicios" class="py-16 px-4">
             <div class="container mx-auto max-w-screen-xl">
                 <h2 class="text-center text-4xl font-bold mb-6 text-white">Servicios Freelance</h2>
                 <p class="text-center text-lg mb-8 text-gray-300">Brindo soluciones digitales claras y funcionales para personas, emprendedores y negocios.</p>
@@ -618,7 +601,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.09-.75-1.7-.98L14 2H10L9.27 4.72c-.6.23-1.17.58-1.7.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.12.22-.07.49.12.64l2.11 1.65c-.04.32-.07.64-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.09.75 1.7.98L10 22h4l.73-2.72c.6-.23 1.17-.58 1.7-.98l2.49 1c.22.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5s-1.57 3.5-3.5 3.5z"/></svg>
                         </div>
                         <h4 class="text-xl font-semibold mb-2 text-white">Otros</h4>
-                        <p class="text-base text-gray-300">Realizo otras tareas de software menores. Consultar conmigo antes de hablar.</p>
+                        <p class="text-base text-gray-300">Realizo otras tareas de software menores. Consultar conmigo por mensaje vía el formulario de contacto de esta página.</p>
                     </div>
                 </div>
                 <p class="text-center text-lg mt-8 mb-4 text-gray-300">Pasos realizados durante el desarrollo de un proyecto: </p>
@@ -655,7 +638,7 @@
             </div>
         </section>
 
-        <section id="contacto" class="reveal py-16 px-4">
+        <section id="contacto" class="py-16 px-4">
             <div class="contact-form-container bg-gray-800 rounded-lg shadow-lg p-8 max-w-md mx-auto my-8">
                 <h2 class="text-3xl font-bold text-center mb-6 text-white">Contactame</h2>
                 <form id="contact-form" method="post">
@@ -685,9 +668,9 @@
             </div>
         </section>
 
-       <section id="proyectos" class="reveal py-16 px-4">
-            <h2 class="tituloP reveal text-center text-4xl font-bold mb-8 text-white">Échale un vistazo a algunos de mis proyectos</h2>
-            <div class="proyectos reveal grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 mx-auto max-w-screen-lg">
+       <section id="proyectos" class="py-16 px-4">
+            <h2 class="tituloP text-center text-4xl font-bold mb-8 text-white">Échale un vistazo a algunos de mis proyectos</h2>
+            <div class="proyectos grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 mx-auto max-w-screen-lg">
                 <div>
                      <a href="https://intachables.com/" target="_blank" rel="noreferrer"><img src="Imagenes/proyecto1.png" alt="Proyecto 1" class="w-full h-48 object-cover rounded-lg shadow-lg transition duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/400x300/4a5568/cbd5e0?text=Imagen+no+disponible';"></a>
                 </div>
