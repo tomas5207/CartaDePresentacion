@@ -3,160 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio personal de Tomás Jorcin Rodriguez - Web/Backend Developer especializado en ExpressJS, Sequelize, PostgreSQL, NodeJS, JavaScript y ReactJS.">
+    <meta name="keywords" content="portfolio, developer, web developer, backend, NodeJS, React, Express, PostgreSQL">
+    <meta name="author" content="Tomás Jorcin Rodriguez">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portafolio - Tomás Jorcin Rodriguez">
+    <meta property="og:description" content="Web/Backend Developer especializado en ExpressJS, Sequelize, PostgreSQL, NodeJS, JavaScript y ReactJS.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="Imagenes/ImagenPortafolio.jpg">
+    <meta property="og:locale" content="es_UY">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Imagenes/escritura.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Portafolio - Tomás Jorcin Rodriguez</title>
     <style>
-        @font-face {
-        font-family: 'Bebas_Neue';
-        src: url('../Fuentes/Bebas_Neue/BebasNeue-Regular.ttf');
+        html {
+            scroll-behavior: smooth;
         }
 
-        @font-face{
-        font-family: 'Orbitron';
-        src: url('../Fuentes/Orbitron/Orbitron-Regular.ttf');
+        @font-face {
+            font-family: 'Bebas_Neue';
+            src: url('../Fuentes/Bebas_Neue/BebasNeue-Regular.ttf');
         }
+
+        @font-face {
+            font-family: 'Orbitron';
+            src: url('../Fuentes/Orbitron/Orbitron-Regular.ttf');
+        }
+
         /* Estilos personalizados para el efecto de aparición al desplazar */
         .reveal {
             position: relative;
             opacity: 0;
-            transform: translateY(50px); /* Empieza ligeramente desplazado hacia abajo */
+            transform: translateY(50px);
             transition: opacity 1s ease, transform 1s ease;
         }
 
         .reveal.active {
             opacity: 1;
-            transform: translateY(0); /* Vuelve a la posición original */
-        }
-
-        /* Estilos para las tarjetas de educación y experiencia (simplificados sin el efecto flip 3D) */
-        .education-card, .work-card {
-            background-color: #2d3748; /* bg-gray-800 */
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
-            padding: 1.5rem; /* p-6 */
-            text-align: center;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .education-card img, .work-card img {
-            width: 80px; /* w-20 */
-            height: 80px; /* h-20 */
-            object-fit: cover;
-            border-radius: 0.25rem; /* rounded */
-            margin-bottom: 1rem; /* mb-4 */
-        }
-
-        .education-card h3, .work-card h3 {
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 600; /* font-semibold */
-            margin-bottom: 0.5rem; /* mb-2 */
-        }
-
-        .education-card span, .work-card span {
-            font-size: 0.875rem; /* text-sm */
-            color: #a0aec0; /* text-gray-400 */
-            margin-bottom: 0.5rem; /* mb-2 */
-        }
-
-        .education-card p, .work-card p {
-            font-size: 1rem; /* text-base */
-            color: #cbd5e0; /* text-gray-300 */
+            transform: translateY(0);
         }
 
         /* Estilos para el formulario de contacto */
         .contact-form-container {
-            background-color: #2d3748; /* bg-gray-800 */
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
-            padding: 2rem; /* p-8 */
-            max-width: 500px; /* max-w-md */
-            margin: 2rem auto; /* mx-auto my-8 */
+            background-color: #2d3748;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 500px;
+            margin: 2rem auto;
         }
 
         .contact-form-container h2 {
-            font-size: 2rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
+            font-size: 2rem;
+            font-weight: 700;
             text-align: center;
-            margin-bottom: 1.5rem; /* mb-6 */
+            margin-bottom: 1.5rem;
             color: white;
         }
 
         .contact-form-container .form-group {
-            margin-bottom: 1.5rem; /* mb-6 */
+            margin-bottom: 1.5rem;
         }
 
         .contact-form-container label {
             display: block;
-            margin-bottom: 0.5rem; /* mb-2 */
-            font-weight: 600; /* font-semibold */
-            color: #cbd5e0; /* text-gray-300 */
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #cbd5e0;
         }
 
         .contact-form-container input[type="text"],
         .contact-form-container input[type="email"],
         .contact-form-container textarea {
             width: 100%;
-            padding: 0.75rem; /* p-3 */
-            border-radius: 0.25rem; /* rounded */
-            border: 1px solid #4a5568; /* border-gray-600 */
-            background-color: #1a202c; /* bg-gray-900 */
+            padding: 0.75rem;
+            border-radius: 0.25rem;
+            border: 1px solid #4a5568;
+            background-color: #1a202c;
             color: white;
-            font-size: 1rem; /* text-base */
+            font-size: 1rem;
         }
 
         .contact-form-container input[type="text"]:focus,
         .contact-form-container input[type="email"]:focus,
         .contact-form-container textarea:focus {
-             outline: none;
-             border-color: #4299e1; /* border-blue-500 */
-             box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* ring-2 ring-blue-500 */
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
         }
 
         .contact-form-container textarea {
-            resize: vertical; /* Permite redimensionar verticalmente */
+            resize: vertical;
         }
 
         .contact-form-container button[type="submit"] {
             width: 100%;
-            padding: 0.75rem; /* p-3 */
-            background-color: #4299e1; /* bg-blue-500 */
+            padding: 0.75rem;
+            background-color: #4299e1;
             color: white;
-            font-weight: 700; /* font-bold */
+            font-weight: 700;
             border: none;
-            border-radius: 0.25rem; /* rounded */
+            border-radius: 0.25rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         .contact-form-container button[type="submit"]:hover {
-            background-color: #3182ce; /* bg-blue-600 */
+            background-color: #3182ce;
         }
 
         /* Estilos para las redes sociales */
         .redes-sociales {
-            margin-top: 2rem; /* mt-8 */
+            margin-top: 2rem;
             text-align: center;
         }
 
         .redes-sociales h3 {
-            font-size: 1.5rem; /* text-2xl */
-            font-weight: 700; /* font-bold */
-            margin-bottom: 1rem; /* mb-4 */
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
             color: white;
         }
 
         .redes-sociales a {
             display: inline-block;
-            margin: 0 0.5rem; /* mx-2 */
+            margin: 0 0.5rem;
         }
 
         .redes-sociales img {
-            height: 30px; /* h-8 (aproximado) */
+            height: 30px;
             vertical-align: middle;
         }
 
@@ -165,277 +145,134 @@
             transform: scale(1.1);
         }
 
-         /* Estilos para los botones de CV */
+        /* Estilos para los botones de CV */
         .btn-cv {
             display: inline-flex;
             align-items: center;
-            padding: 0.75rem 1.5rem; /* py-3 px-6 */
-            background-color: #4299e1; /* bg-green-500 */
+            padding: 0.75rem 1.5rem;
+            background-color: #4299e1;
             color: white;
-            font-weight: 700; /* font-bold */
+            font-weight: 700;
             border: none;
-            border-radius: 0.5rem; /* rounded-lg */
+            border-radius: 0.5rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin: 0.5rem; /* m-2 */
+            margin: 0.5rem;
+            text-decoration: none;
         }
 
         .btn-cv:hover {
-            background-color: #38a169; /* bg-green-600 */
+            background-color: #38a169;
         }
 
         .img-cv {
-            width: 24px; /* w-6 */
-            height: 24px; /* h-6 */
-            margin-right: 0.5rem; /* mr-2 */
-        }
-
-        /* Estilos para la sección de proyectos */
-        .proyectos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
-            gap: 1.5rem; /* gap-6 */
-            margin-top: 2rem; /* mt-8 */
-        }
-
-        .proyectos img {
-            width: 100%;
-            height: auto;
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
-            transition: transform 0.3s ease;
-        }
-
-        .proyectos img:hover {
-            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-        }
-
-        /* Estilos para el título de proyectos */
-        .tituloP {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 700; /* font-bold */
-            margin-bottom: 2rem; /* mb-8 */
-            color: white;
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
         }
 
         /* Estilos para la imagen principal */
         .foto {
-            width: 150px; /* w-40 */
-            height: 150px; /* h-40 */
+            width: 150px;
+            height: 150px;
             object-fit: cover;
-            border-radius: 9999px; /* rounded-full */
-            margin-bottom: 1.5rem; /* mb-6 */
-            border: 4px solid transparent; /* border-4 border-white */
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+            border: 4px solid transparent;
         }
 
-         /* Estilos para el contenedor principal */
+        /* Estilos para el contenedor principal */
         .contenedor-principal {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 4rem 1rem; /* py-16 px-4 */
+            padding: 4rem 1rem;
         }
 
         /* Estilos para el saludo principal */
         .Saludo {
-            font-size: 2.5rem; /* text-4xl sm:text-5xl */
-            font-weight: 700; /* font-bold */
+            font-size: 2.5rem;
+            font-weight: 700;
             color: white;
-            margin-bottom: 2rem; /* mb-8 */
-        }
-
-        /* Estilos para la sección "Sobre mi" */
-        #mi {
-            padding: 4rem 1rem; /* py-16 px-4 */
-        }
-
-        .sobre-mi {
-            font-size: 1.125rem; /* text-lg */
-            line-height: 1.75rem; /* leading-relaxed */
-            text-align: center;
-            margin-bottom: 3rem; /* mb-12 */
-            max-width: 800px; /* max-w-3xl */
-            margin-left: auto;
-            margin-right: auto;
-            color: #cbd5e0; /* text-gray-300 */
-        }
-
-        #mi h2 {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 700; /* font-bold */
-            text-align: center;
-            margin-bottom: 2rem; /* mb-8 */
-            color: white;
-        }
-
-        .contenido-mi {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
-            gap: 1.5rem; /* gap-6 */
-            max-width: 1000px; /* max-w-screen-lg */
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-         /* Estilos para la sección "Perfil profesional" */
-        #profesional {
-             padding: 4rem 1rem; /* py-16 px-4 */
-        }
-
-        #profesional h2 {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 700; /* font-bold */
-            text-align: center;
-            margin-bottom: 2rem; /* mb-8 */
-            color: white;
-        }
-
-        .contenido-profesional {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
-            gap: 1.5rem; /* gap-6 */
-            max-width: 800px; /* max-w-screen-md */
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Estilos para la sección de Curriculum */
-        #curriculum {
-            padding: 4rem 1rem; /* py-16 px-4 */
-            text-align: center;
+            margin-bottom: 2rem;
         }
 
         .CV {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem; /* gap-4 */
+            gap: 1rem;
         }
 
-        /* Estilos para la sección de Servicios Freelancer */
-        #servicios {
-            padding: 4rem 1rem; /* py-16 px-4 */
-        }
-
-        #servicios h2 {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 700; /* font-bold */
-            text-align: center;
-            margin-bottom: 1.5rem; /* mb-6 */
-            color: white;
-        }
-
-        #servicios p {
-            font-size: 1.125rem; /* text-lg */
-            text-align: center;
-            margin-bottom: 2rem; /* mb-8 */
-            color: #cbd5e0; /* text-gray-300 */
-        }
-
-        #servicios .container {
-             max-width: 1200px; /* max-w-screen-xl */
-             margin-left: auto;
-             margin-right: auto;
-        }
-
-        #servicios .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        #servicios .col-md-4 {
-            width: 100%;
-            margin-bottom: 1.5rem; /* mb-6 */
-            padding: 0 1rem; /* px-4 */
-        }
-
-        @media (min-width: 768px) { /* md breakpoint */
-            #servicios .col-md-4 {
-                width: calc(100% / 3); /* 3 columns on medium screens */
-            }
-        }
-
-        #servicios .mb-3 {
-            margin-bottom: 0.75rem; /* mb-3 */
-        }
-
-        #servicios .fs-1 {
-            font-size: 3rem; /* text-5xl */
-        }
-
-        #servicios .text-primary { color: #4299e1; /* blue-500 */ }
-        #servicios .text-success { color: #48bb78; /* green-500 */ }
-        #servicios .text-warning { color: #f6e05e; /* yellow-400 */ }
-
-
-         /* Estilos para la sección de Contacto */
+        /* Estilos para la sección de Contacto */
         #contacto {
-            padding: 4rem 1rem; /* py-16 px-4 */
+            padding: 4rem 1rem;
         }
 
-         /* Estilos para la sección de Proyectos */
+        /* Estilos para la sección de Proyectos */
         #proyectos {
-            padding: 4rem 1rem; /* py-16 px-4 */
+            padding: 4rem 1rem;
         }
-
 
         /* Estilos generales del cuerpo */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* bg-gray-900 */
-            color: #e2e8f0; /* text-gray-200 */
+            background-color: #1a202c;
+            color: #e2e8f0;
             line-height: 1.6;
         }
 
-        /* Estilos para el encabezado */
+        /* Estilos para el encabezado y navegación */
         header {
-            background-color: #2d3748; /* bg-gray-800 */
-            padding: 1.5rem 0; /* py-6 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow-md */
+            background-color: #2d3748;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         header .container {
-            max-width: 1200px; /* max-w-screen-xl */
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 1rem; /* px-4 */
+            padding: 0 1rem;
         }
 
         header h1 {
-            font-size: 1.875rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
+            font-size: 1.875rem;
+            font-weight: 700;
             color: white;
         }
 
         /* Estilos para los enlaces de navegación */
         .nav-link {
             color: white;
-            font-size: 25px; 
+            font-size: 25px;
             transition: color 0.5s ease;
+            text-decoration: none;
         }
 
         .nav-link:hover {
-            color: #2d3748; /* Color negro al pasar el ratón */
+            color: #2d3748;
             background-color: white;
             border-radius: 15px;
-            transition: 0.6s; 
+            transition: 0.6s;
         }
 
         /* Estilos para el toggler del menú en pantallas pequeñas */
         .navbar-toggler {
-            display: block; /* Muestra el toggler por defecto */
+            display: block;
             padding: 0.5rem 0.75rem;
             font-size: 1.25rem;
             line-height: 1;
-            background-color: #cbd5e0; /* bg-gray-300 */
+            background-color: #cbd5e0;
             border: 1px solid transparent;
             border-radius: 0.25rem;
+            cursor: pointer;
         }
 
         .navbar-toggler-icon {
@@ -446,20 +283,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
-             /* Icono de hamburguesa SVG */
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-        
-        .proyectos img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Asegura que las imágenes se ajusten dentro de los contenedores */
-        border-radius: 10px; /* Un pequeño borde redondeado, opcional */
-        transition: transform 0.3s ease;
-        }
-
-        .proyectos img:hover {
-         transform: scale(1.05); /* Efecto de zoom al pasar el ratón por encima */
         }
 
         /* Oculta el menú por defecto y lo muestra en pantallas md y superiores */
@@ -469,105 +293,101 @@
             align-items: center;
         }
 
-        @media (min-width: 768px) { /* md breakpoint */
+        header nav ul {
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
             .navbar-toggler {
-                display: none; /* Oculta el toggler en pantallas md y superiores */
+                display: none;
             }
             #menu {
-                display: flex !important; /* Muestra el menú en pantallas md y superiores */
-                justify-content: flex-end; /* Alinea los elementos a la derecha */
+                display: flex !important;
+                justify-content: flex-end;
             }
-             header nav ul {
+            header nav ul {
                 flex-direction: row;
-                gap: 1rem; /* space-x-4 */
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #2d3748;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 50;
             }
         }
 
         /* Estilos para el pie de página */
         footer {
-            background-color: #2d3748; /* bg-gray-800 */
-            padding: 1.5rem 0; /* py-6 */
+            background-color: #2d3748;
+            padding: 1.5rem 0;
             text-align: center;
-            color: #cbd5e0; /* text-gray-300 */
-            margin-top: 4rem; /* mt-16 */
+            color: #cbd5e0;
+            margin-top: 4rem;
         }
-        /* 1. Definimos la animación del giro */
+
+        /* Animación del giro del borde */
         @keyframes rotate-border {
-        to {
-        --angle: 360deg;
+            to {
+                --angle: 360deg;
             }
-        }        
+        }
 
-        /* 2. Registramos la propiedad --angle para que CSS pueda animarla */
         @property --angle {
-        syntax: '<angle>';
-        initial-value: 0deg;
-        inherits: false;
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
         }
 
-       /* 3. Estilos para el contenedor del efecto */
+        /* Estilos para el contenedor del efecto de luz */
         .efecto-luz-borde {
-        --angle: 0deg;
-        /* Velocidad de la luz (4s) y el color del degradado (puedes cambiarlos) */
-        background-image: conic-gradient(from var(--angle), transparent 70%, #60a5fa, #3b82f6, transparent);
-        animation: rotate-border 4s linear infinite;
-        position: relative;
-        padding: 3px; /* Este es el grosor visible del borde de luz */
+            --angle: 0deg;
+            background-image: conic-gradient(from var(--angle), transparent 70%, #60a5fa, #3b82f6, transparent);
+            animation: rotate-border 4s linear infinite;
+            position: relative;
+            padding: 3px;
         }
 
-        .logo-container {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #1e293b; /* Fondo oscuro por si la imagen tiene transparencia */
-        border: 4px solid #0f172a;
-        z-index: 20;
-        }
-
-        .logo-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Esto evita que la imagen se estire o se vea cuadrada */
-        }
-
-       /* Animación de entrada para los elementos */
+        /* Animación de entrada para los elementos de la timeline */
         .t-item {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease-out;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
         }
 
         .t-item.show {
-        opacity: 1;
-        transform: translateY(0);
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .text-glow {
-        text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
-        }  
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
 
         /* Efecto de elevación de la tarjeta al hacer hover */
-        .proyectos div.group:hover {
-        box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.3);
-        transform: translateY(-5px);
-        }
-
-        /* El botón con efecto de barrido que mencionamos antes */
         .group:hover .absolute {
-        left: 100%;
-        transition: all 0.6s ease;
+            left: 100%;
+            transition: all 0.6s ease;
         }
-
     </style>
 </head>
 <body>
 
-    
-<div class="bg-gray-900 text-gray-200 min-h-screen">
+
+    <div class="bg-gray-900 text-gray-200 min-h-screen">
 
         <section id="principal" class="relative min-h-[80vh] flex items-center justify-center bg-slate-900 overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-slate-900 z-0"></div>
@@ -586,19 +406,26 @@
                 </p>
             </div>
             <div class="CV flex flex-wrap justify-center gap-4">
-            <a href="Tomás Jorcin CV.pdf" download="Tomás Jorcin CV"><button class="btn-cv inline-flex items-center py-3 px-6 bg-blue-500 text-white font-bold rounded-lg hover:bg-red-600 transition duration-300 m-2"><lord-icon src="https://cdn.lordicon.com/ipyszerf.json" trigger="hover" colors="primary:#e83a30,secondary:#000000,tertiary:#ffffff" style="width:25px;height:25px"></lord-icon>Descargar CV</button></a>
-            <a href="Tomás Jorcin CV(Ingles).pdf" download="Tomás Jorcin CV(Ingles)"><button class="btn-cv inline-flex items-center py-3 px-6 bg-blue-500 text-white font-bold rounded-lg hover:bg-red-600 transition duration-300 m-2"><lord-icon src="https://cdn.lordicon.com/ipyszerf.json" trigger="hover" colors="primary:#e83a30,secondary:#000000,tertiary:#ffffff" style="width:25x;height:25px"></lord-icon>Download CV(English)</button></a>
+            <a href="Tomás Jorcin CV.pdf" download="Tomás Jorcin CV" class="btn-cv inline-flex items-center py-3 px-6 bg-blue-500 text-white font-bold rounded-lg hover:bg-red-600 transition duration-300 m-2">
+                <lord-icon src="https://cdn.lordicon.com/ipyszerf.json" trigger="hover" colors="primary:#e83a30,secondary:#000000,tertiary:#ffffff" style="width:25px;height:25px"></lord-icon>
+                Descargar CV
+            </a>
+            <a href="Tomás Jorcin CV(Ingles).pdf" download="Tomás Jorcin CV(Ingles)" class="btn-cv inline-flex items-center py-3 px-6 bg-blue-500 text-white font-bold rounded-lg hover:bg-red-600 transition duration-300 m-2">
+                <lord-icon src="https://cdn.lordicon.com/ipyszerf.json" trigger="hover" colors="primary:#e83a30,secondary:#000000,tertiary:#ffffff" style="width:25px;height:25px"></lord-icon>
+                Download CV(English)
+            </a>
             </div>
             </div>
         </section>
-        <section id="carrera" class="py-16 px-4 bg-slate-900 overflow-hidden">
-        <div class="relative max-w-[1200px] my-[100px] mx-auto" id="timeline">
+
+        <section id="carrera" class="py-16 px-4 bg-slate-900 overflow-hidden" aria-label="Trayectoria profesional y académica">
+        <div class="relative max-w-[1200px] my-[100px] mx-auto" id="timeline" role="list" aria-label="Línea de tiempo de trayectoria">
 
         <div id="line-progress" class="absolute top-0 left-8 md:left-1/2 -ml-0.5 w-1 bg-blue-500 z-0 origin-top scale-y-0 transition-transform duration-300 ease-out shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
         
         <div class="absolute top-0 left-8 md:left-1/2 -ml-0.5 w-1 h-full bg-white/20"></div>
 
-        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center">
+        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center" role="listitem" aria-label="CTC Rosario, 2019 a 2023">
             <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-blue-600 rounded-full border-4 border-slate-900 z-10 flex items-center justify-center text-white shadow-[0_0_15px_rgba(37,99,235,0.5)] overflow-hidden">
                 <img src="Imagenes/CTC.jpg" class="w-full h-full object-cover" alt="CTC Rosario">
             </div>
@@ -616,7 +443,7 @@
             </div>
         </div>
 
-        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center md:flex-row-reverse">
+        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center md:flex-row-reverse" role="listitem" aria-label="CoderHouse, 2023 a 2024">
             <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-blue-600 rounded-full border-4 border-slate-900 z-10 flex items-center justify-center text-white shadow-[0_0_15px_rgba(37,99,235,0.5)] overflow-hidden">
                 <img src="Imagenes/Coder.jpg" class="w-full h-full object-cover" alt="CoderHouse">
             </div>
@@ -634,7 +461,7 @@
             </div>
         </div>
 
-        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center">
+        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center" role="listitem" aria-label="Soy Henry, 2023 a 2024">
             <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-blue-600 rounded-full border-4 border-slate-900 z-10 overflow-hidden shadow-[0_0_15px_rgba(37,99,235,0.5)]">
                 <img src="Imagenes/Henry.jpg" class="w-full h-full object-cover" alt="Henry">
             </div>
@@ -651,7 +478,7 @@
             </div>
         </div>
 
-        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center md:flex-row-reverse">
+        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center md:flex-row-reverse" role="listitem" aria-label="Brokerware, 2024">
             <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-blue-600 rounded-full border-4 border-slate-900 z-10 overflow-hidden shadow-[0_0_15px_rgba(37,99,235,0.5)]">
                 <img src="Imagenes/Brokerware.jpg" class="w-full h-full object-cover" alt="Brokerware">
             </div>
@@ -668,7 +495,7 @@
             </div>
         </div>
 
-        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center">
+        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center" role="listitem" aria-label="Intachables.com, 2024 a 2025">
             <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-blue-600 rounded-full border-4 border-slate-900 z-10 overflow-hidden shadow-[0_0_15px_rgba(37,99,235,0.5)]">
                 <img src="Imagenes/Freelancer.jpg" class="w-full h-full object-cover" alt="Freelancer">
             </div>
@@ -685,7 +512,7 @@
             </div>
         </div>
 
-        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center md:flex-row-reverse">
+        <div class="t-item relative w-full mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out flex items-center md:flex-row-reverse" role="listitem" aria-label="Instituto BIOS, 2025 a 2026">
             <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-blue-600 rounded-full border-4 border-slate-900 z-10 overflow-hidden shadow-[0_0_15px_rgba(37,99,235,0.5)]">
                 <img src="Imagenes/Logo-BIOS.jpg" class="w-full h-full object-cover" alt="BIOS">
             </div>
@@ -702,13 +529,11 @@
             </div>
         </div>
 
-        <div class="t-item relative w-full h-32 flex justify-center transition-all duration-700">
+        <div class="t-item relative w-full h-32 flex justify-center transition-all duration-700" role="listitem" aria-label="Fin de la trayectoria">
         <div class="absolute bottom-0 left-8 md:left-1/2 -translate-x-1/2 z-20" id="final-node">
         
-        <!-- Onda de luz (Solo se activa con la clase 'active') -->
         <div class="absolute inset-0 rounded-full bg-blue-500 animate-ping opacity-0 transition-opacity duration-500" id="final-ping"></div>
         
-        <!-- Punto físico (Inicia gris, cambia a azul con 'active') -->
         <div class="relative w-6 h-6 bg-slate-700 rounded-full shadow-none border-2 border-slate-800 transition-all duration-500" id="final-dot"></div>
         
         </div>
@@ -716,16 +541,15 @@
     </div>
     </div>
 </section>
+
 <section id="sobre-mi" class="relative pb-20 px-4 bg-slate-900 -mt-10 z-10">
     <div class="max-w-4xl mx-auto">
-        
         
         <div id="about-popup" class="opacity-0 translate-y-10 transition-all duration-1000 ease-out 
                     bg-black/40 backdrop-blur-xl border border-blue-500/30 rounded-[2rem] 
                     p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
             
-            
-<div id="glow-line" class="absolute -top-px left-20 md:left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent shadow-[0_0_15px_rgba(59,130,246,0.8)] transition-all duration-700 opacity-0"></div>
+            <div id="glow-line" class="absolute -top-px left-20 md:left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent shadow-[0_0_15px_rgba(59,130,246,0.8)] transition-all duration-700 opacity-0"></div>
 
             <div class="relative z-10">
             <header class="mb-8 bg-blue-950/80 backdrop-blur-md p-6 rounded-[2rem] border border-blue-500/20 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
@@ -738,7 +562,6 @@
             </header>
 
                 <div class="flex flex-col gap-8">
-    <!-- 1. Descripción Superior (Ocupa todo el ancho) -->
     <div class="space-y-4">   
         <h3 class="text-2xl font-bold text-white">
             ¿Qué rol busco para emplear?:
@@ -766,10 +589,8 @@
         </p>
     </div>
 
-    <!-- 2. Grilla Inferior (Virtudes vs Áreas de Mejora) -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <!-- Columna: Virtudes -->
         <div class="bg-green-500/5 rounded-2xl p-6 border border-green-500/20 shadow-lg">
             <h4 class="text-white font-bold mb-4 flex items-center gap-2">
                 <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
@@ -791,7 +612,6 @@
             </ul>
         </div>
 
-        <!-- Columna: Áreas de Mejora (Defectos planteados profesionalmente) -->
         <div class="bg-red-500/5 rounded-2xl p-6 border border-red-500/10 shadow-lg">
             <h4 class="text-white font-bold mb-4 flex items-center gap-2">
                 <span class="w-2 h-2 bg-red-500 rounded-full opacity-70"></span>
@@ -804,7 +624,7 @@
                 </li>
                 <li class="text-gray-300 flex gap-2 items-start">
                     <span class="text-red-400">▹</span> 
-                    <span><strong>Iniciativa:</strong>Algunas veces me cuesta tomar la iniciativa de hacer tareas por cuenta propía sin que nadie me lo pida u ordene. No obstante, siempre me mantengo al tanto de las tareas a realizar y que el proyecto podría necesitar para cumplir u optimizar el mismo.</span>
+                    <span><strong>Iniciativa:</strong> Algunas veces me cuesta tomar la iniciativa de hacer tareas por cuenta propía sin que nadie me lo pida u ordene. No obstante, siempre me mantengo al tanto de las tareas a realizar y que el proyecto podría necesitar para cumplir u optimizar el mismo.</span>
                 </li>
             </ul>
         </div>
@@ -815,26 +635,23 @@
         </div>
     </div>
 </section>
+
     <section id="proyectos" class="relative px-4 bg-slate-900">
     <header class="relative reveal text-center mb-20 py-10 bg-blue-950/80 backdrop-blur-md p-6 rounded-[2rem] border border-blue-500/20 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-    <!-- Decoración de fondo: Un resplandor difuso detrás del título -->
     <div class="absolute inset-0 -z-10 flex justify-center items-center">
         <div class="w-[300px] h-[300px] bg-blue-600/10 blur-[120px] rounded-full"></div>
     </div>
 
-    <!-- Título con diseño mejorado -->
     <h2 class="relative text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tighter">
         <span class="block text-sm uppercase tracking-[0.3em] text-blue-400 font-mono mb-2 opacity-80">
             Proyectos
         </span>
         Algunos de mis <span class="relative inline-block text-blue-500">
             Proyectos
-            <!-- Subrayado decorativo sutil -->
             <span class="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></span>
         </span>
     </h2>
 
-    <!-- Párrafo con mejor legibilidad -->
     <p class="text-gray-400 max-w-xl mx-auto text-base md:text-lg leading-relaxed px-4">
         Una selección de los proyectos en los que he participado 
         <span class="text-gray-200">como desarrollador</span>.
@@ -1002,9 +819,9 @@
         </div>
     </div>
 </section>
+
         <section id="contacto" class="reveal py-16 px-4">
             <div class="contact-section relative py-16">
-    <!-- Resplandor de fondo -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-500/10 blur-[100px] -z-10"></div>
 
     <div class="contact-form-container bg-slate-900/60 backdrop-blur-xl rounded-[2rem] border border-slate-700/50 shadow-2xl p-8 md:p-10 max-w-lg mx-auto my-8 relative overflow-hidden custom-glow">
@@ -1014,43 +831,35 @@
         
         <form id="contact-form">
             <div class="grid grid-cols-1 gap-6">
-                <!-- Input Nombre -->
                 <div class="group relative">
                     <label for="name" class="block mb-2 text-sm font-mono text-blue-400 uppercase tracking-widest opacity-70 group-focus-within:opacity-100 transition-opacity">Nombre</label>
                     <input type="text" id="name" name="user_name" required 
                         class="w-full p-4 rounded-xl bg-slate-950/50 border border-slate-700 text-white transition-all duration-300 hover:!bg-slate-500/80 focus:!bg-sky-800 focus:border-blue-500 focus:outline-none placeholder-sky-500">
                 </div>
 
-                <!-- Input Email -->
                 <div class="group relative">
                     <label for="email" class="block mb-2 text-sm font-mono text-blue-400 uppercase tracking-widest opacity-70 group-focus-within:opacity-100 transition-opacity">Email</label>
                     <input type="email" id="email" name="user_email" required 
                         class="w-full p-4 rounded-xl bg-slate-950/50 border border-slate-700 text-white transition-all duration-300 hover:!bg-slate-500/80 focus:!bg-sky-800 focus:border-blue-500 focus:outline-none placeholder-sky-500">
                 </div>
 
-                <!-- Input Mensaje -->
                 <div class="group relative">
                     <label for="message" class="block mb-2 text-sm font-mono text-blue-400 uppercase tracking-widest opacity-70 group-focus-within:opacity-100 transition-opacity">Mensaje</label>
                     <textarea id="message" name="message" rows="4" required 
                         class="w-full p-4 rounded-xl bg-slate-950/50 border border-slate-700 text-white transition-all duration-300 hover:bg-slate-500/80 focus:bg-sky-800 focus:border-blue-500 focus:outline-none resize-none"></textarea>
                 </div>
 
-                <!-- Botón Animado -->
                 <button type="submit" class="relative group overflow-hidden p-4 bg-blue-600 text-white font-bold rounded-xl transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]">
                 <span class="relative z-10 flex justify-center items-center gap-2">
                 Enviar Mensaje 
-                <!-- Lordicon integrado: se activa al hover por defecto -->
                 <lord-icon src="https://cdn.lordicon.com/dpggoewm.json" trigger="hover" colors="primary:#e4e4e4,secondary:#30c9e8,tertiary:#000000" style="width:25px;height:25px"></lord-icon>
                 </span>
-
-                <!-- Tu efecto de brillo original -->
                 <div class="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-500 group-hover:left-full"></div>
                 </button>
             </div>
         </form>
     </div>
 
-    <!-- Redes Sociales Modernizadas -->
     <div class="redes-sociales mt-12 text-center">
         <p class="text-slate-500 font-mono text-xs uppercase tracking-[0.3em] mb-6 text-center">Mis redes</p>
         <div class="flex justify-center gap-6">
@@ -1070,182 +879,132 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script>
-    // 1. Inicializa SIEMPRE al principio de tu JS (fuera del listener)
-emailjs.init("fa-DZWj3Ti3MRpGGh"); 
+        emailjs.init("fa-DZWj3Ti3MRpGGh");
 
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
 
-    const serviceID = "service_3umwuuc";
-    const templateID = "template_8zj93yh";
-    
-    // Referencia al botón para feedback visual
-    const btn = event.target.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = 'Enviando... <lord-icon src="https://cdn.lordicon.com/jgeruqwm.json" trigger="loop" colors="primary:#4be1ec,secondary:#e4e4e4" style="width:25px;height:25px"></lord-icon>';
-    btn.disabled = true;
+            const serviceID = "service_iz70z1f";
+            const templateID = "template_8zj93yh";
+            
+            const btn = event.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Enviando... <lord-icon src="https://cdn.lordicon.com/jgeruqwm.json" trigger="loop" colors="primary:#4be1ec,secondary:#e4e4e4" style="width:25px;height:25px"></lord-icon>';
+            btn.disabled = true;
 
-    // 2. Ya no necesitas pasar la publicKey aquí si usaste emailjs.init
-    emailjs.sendForm(serviceID, templateID, event.target)
-        .then(() => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Mensaje enviado con éxito',
-                text: 'Muchas gracias por contactarme. Responderé lo más pronto posible.',
-                background: '#0f172a', // Color acorde a tu diseño slate-900
-                color: '#fff'
-            });
-            event.target.reset();
-        })
-        .catch((error) => {
-            console.error('EmailJS Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'No se pudo enviar el email. Verifica tu conexión o intenta más tarde.',
-                background: '#0f172a',
-                color: '#fff'
-            });
-        })
-        .finally(() => {
-            btn.innerHTML = originalText;
-            btn.disabled = false;
+            emailjs.sendForm(serviceID, templateID, event.target)
+                .then(() => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Mensaje enviado con éxito',
+                        text: 'Muchas gracias por contactarme. Responderé lo más pronto posible.',
+                        background: '#0f172a',
+                        color: '#fff'
+                    });
+                    event.target.reset();
+                })
+                .catch((error) => {
+                    console.error('EmailJS Error:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'No se pudo enviar el email. Verifica tu conexión o intenta más tarde.',
+                        background: '#0f172a',
+                        color: '#fff'
+                    });
+                })
+                .finally(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                });
         });
-});
-
-    </script>
+    </script>
     <script>
-        document.addEventListener('scroll', function () {
-            const reveals = document.querySelectorAll('.reveal');
+    (function() {
+        'use strict';
 
-            reveals.forEach(function (element) {
-                const elementRect = element.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
+        var timeline = document.getElementById('timeline');
+        var progressLine = document.getElementById('line-progress');
+        var finalDot = document.getElementById('final-dot');
+        var finalPing = document.getElementById('final-ping');
+        var aboutPopup = document.getElementById('about-popup');
+        var glowLine = document.getElementById('glow-line');
+        var reveals = document.querySelectorAll('.reveal');
+        var items = document.querySelectorAll('.t-item');
+        var ticking = false;
 
-                // Verifica si el elemento está parcialmente visible en el viewport
-                if (elementRect.top < windowHeight && elementRect.bottom > 0) {
+        function updateElements() {
+            ticking = false;
+            var windowHeight = window.innerHeight;
+
+            reveals.forEach(function(element) {
+                var rect = element.getBoundingClientRect();
+                if (rect.top < windowHeight && rect.bottom > 0) {
                     element.classList.add('active');
                 } else {
                     element.classList.remove('active');
                 }
             });
-        });
+
+            if (!timeline) return;
+
+            var rect = timeline.getBoundingClientRect();
+            var progress = (windowHeight / 2 - rect.top) / rect.height;
+            progress = Math.max(0, Math.min(1, progress));
+
+            progressLine.style.height = '100%';
+            progressLine.style.transform = 'scaleY(' + progress + ')';
+
+            items.forEach(function(item) {
+                var itemRect = item.getBoundingClientRect();
+                if (itemRect.top < windowHeight * 0.75 && itemRect.bottom > 0) {
+                    item.classList.add('show');
+                } else {
+                    item.classList.remove('show');
+                }
+            });
+
+            if (progress >= 0.99) {
+                finalDot.classList.remove('bg-slate-700', 'border-slate-800');
+                finalDot.classList.add('bg-blue-500', 'border-white', 'shadow-[0_0_20px_rgba(59,130,246,1)]');
+                finalPing.classList.remove('opacity-0');
+                finalPing.classList.add('opacity-75');
+
+                glowLine.classList.replace('opacity-0', 'opacity-100');
+                glowLine.classList.replace('w-0', 'w-32');
+                aboutPopup.classList.replace('opacity-0', 'opacity-100');
+                aboutPopup.classList.replace('translate-y-10', 'translate-y-0');
+            } else {
+                finalDot.classList.add('bg-slate-700', 'border-slate-800');
+                finalDot.classList.remove('bg-blue-500', 'border-white', 'shadow-[0_0_20px_rgba(59,130,246,1)]');
+                finalPing.classList.add('opacity-0');
+                finalPing.classList.remove('opacity-75');
+
+                glowLine.classList.replace('opacity-100', 'opacity-0');
+                glowLine.classList.replace('w-32', 'w-0');
+                aboutPopup.classList.replace('opacity-100', 'opacity-0');
+                aboutPopup.classList.replace('translate-y-0', 'translate-y-10');
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateElements);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        updateElements();
+    })();
     </script>
     <script>
-    window.addEventListener('scroll', () => {
-    const timeline = document.getElementById('timeline');
-    const progressLine = document.getElementById('line-progress');
-    const items = document.querySelectorAll('.t-item');
-    
-    // 1. Lógica de la línea de progreso
-    const rect = timeline.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    
-    // Calculamos cuánto ha entrado el timeline en la pantalla
-    let distFromTop = windowHeight / 2 - rect.top;
-    let progress = distFromTop / rect.height;
-    
-    // Limitamos el progreso entre 0 y 1
-    progress = Math.max(0, Math.min(1, progress));
-    progressLine.style.height = '100%'; // Para que el scaleY funcione sobre el total
-    progressLine.style.transform = `scaleY(${progress})`;
-
-    // 2. Lógica de aparición/desaparición de hitos
-    items.forEach(item => {
-    const itemRect = item.getBoundingClientRect();
-      // Si el hito está cerca del centro de la pantalla, se muestra
-      if (itemRect.top < windowHeight * 0.75 && itemRect.bottom > 0) {
-        item.classList.add('show');
-    } else {
-        // Opcional: quitar 'show' si quieres que desaparezcan al subir
-        item.classList.remove('show');
-    }
+    document.querySelector('.navbar-toggler').addEventListener('click', function() {
+        var menu = document.getElementById('menu');
+        var isOpen = menu.style.display === 'flex';
+        menu.style.display = isOpen ? 'none' : 'flex';
+        this.setAttribute('aria-expanded', String(!isOpen));
     });
-});
-</script>
-<script>
-    window.addEventListener('scroll', () => {
-    const timeline = document.getElementById('timeline');
-    const lineProgress = document.getElementById('line-progress');
-    const finalDot = document.getElementById('final-dot');
-    const finalPing = document.getElementById('final-ping');
-    
-    const rect = timeline.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-    
-    // Calculamos el progreso (0 a 1)
-    let progress = (viewportHeight / 2 - rect.top) / rect.height;
-    progress = Math.max(0, Math.min(1, progress));
-    
-    // Aplicamos el crecimiento a la línea azul
-    lineProgress.style.transform = `scaleY(${progress})`;
-
-    // LÓGICA DE ILUMINACIÓN DEL PUNTO
-    if (progress >= 0.99) { // Cuando la línea está casi al final o al final
-        // Encendemos el punto (Azul brillante)
-        finalDot.classList.remove('bg-slate-700', 'border-slate-800');
-        finalDot.classList.add('bg-blue-500', 'border-white', 'shadow-[0_0_20px_rgba(59,130,246,1)]');
-        
-        // Activamos la onda de luz
-        finalPing.classList.remove('opacity-0');
-        finalPing.classList.add('opacity-75');
-    } else {
-        // Volvemos al estado gris si el usuario sube el scroll
-        finalDot.classList.add('bg-slate-700', 'border-slate-800');
-        finalDot.classList.remove('bg-blue-500', 'border-white', 'shadow-[0_0_20px_rgba(59,130,246,1)]');
-        
-        finalPing.classList.add('opacity-0');
-        finalPing.classList.remove('opacity-75');
-    }
-});
-</script>
-<script>
-    window.addEventListener('scroll', () => {
-    const timeline = document.getElementById('timeline');
-    const lineProgress = document.getElementById('line-progress');
-    const finalDot = document.getElementById('final-dot');
-    const finalPing = document.getElementById('final-ping');
-    
-    // Elementos del Pop-up
-    const aboutPopup = document.getElementById('about-popup');
-    const glowLine = document.getElementById('glow-line');
-    
-    const rect = timeline.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-    
-    let progress = (viewportHeight / 2 - rect.top) / rect.height;
-    progress = Math.max(0, Math.min(1, progress));
-    
-    lineProgress.style.transform = `scaleY(${progress})`;
-
-    // Sincronización Final
-    if (progress >= 0.99) {
-        // 1. Encender Punto Maestro
-        finalDot.classList.replace('bg-slate-700', 'bg-blue-500');
-        finalDot.classList.add('shadow-[0_0_20px_rgba(59,130,246,1)]', 'border-white');
-        finalPing.classList.replace('opacity-0', 'opacity-75');
-
-        // 2. Activar la luz que "brota" en el pop-up
-        glowLine.classList.replace('opacity-0', 'opacity-100');
-        glowLine.classList.replace('w-0', 'w-32'); // Se expande desde el centro
-
-        // 3. Mostrar el Pop-up
-        aboutPopup.classList.replace('opacity-0', 'opacity-100');
-        aboutPopup.classList.replace('translate-y-10', 'translate-y-0');
-    } else {
-        // Revertir todo si el usuario sube
-        finalDot.classList.replace('bg-blue-500', 'bg-slate-700');
-        finalDot.classList.remove('shadow-[0_0_20px_rgba(59,130,246,1)]', 'border-white');
-        finalPing.classList.replace('opacity-75', 'opacity-0');
-
-        glowLine.classList.replace('opacity-100', 'opacity-0');
-        glowLine.classList.replace('w-32', 'w-0');
-
-        aboutPopup.classList.replace('opacity-100', 'opacity-0');
-        aboutPopup.classList.replace('translate-y-0', 'translate-y-10');
-    }
-});
-</script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
